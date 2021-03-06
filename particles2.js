@@ -93,6 +93,7 @@ class ParticleField{
         this.start = start;
         this.update = true;
         this.max = 100;
+        this.particles = [];
     }
 
     init = ()=>{
@@ -134,7 +135,7 @@ class ParticleField{
             }
             this.c.beginPath();
             this.c.fillStyle = this.particles[n].color;
-            roundRect(this.c, this.particles[n].x, this.particles[n].y, this.s);
+            styledRect(this.c, this.particles[n].x, this.particles[n].y, this.s);
             // c.fillRect(particles[n].x, particles[n].y, s, s);
             // c.closePath();
         }
@@ -178,7 +179,12 @@ class ParticleField{
     draw = ()=>{
     
         this.setInt = setInterval(this.frame, this.speed);
+        console.log('drawing...')
     
+    }
+
+    stop = ()=>{
+        clearInterval(this.setInt);
     }
 
     add_particle = (e)=>{
@@ -211,7 +217,7 @@ class ParticleField{
             let color = this.colors[Math.floor(Math.random() * this.colors.length)];
             this.particles.push(new Particle(x, y, color, this.s, this.s, this.w, this.h));
             this.c.fillStyle = this.particles[this.particles.length-1].color;
-            roundRect(this.c, this.particles[this.particles.length-1].x, this.particles[this.particles.length-1].y, this.s);
+            styledRect(this.c, this.particles[this.particles.length-1].x, this.particles[this.particles.length-1].y, this.s);
         }
         
         
@@ -259,6 +265,16 @@ const roundRect = (c, x, y, s)=>{
     c.fill();
 }
 
+const styledRect = (c, x, y, s)=>{
+    c.beginPath();
+    c.arc(x+r, y+r, r, 0.5*Math.PI, 2*Math.PI, false);
+    c.arc(x+s-r, y+r, r, Math.PI, 0.5*Math.PI, false);
+    c.arc(x+s-r, y+s-r, r, 1.5*Math.PI, Math.PI, false);
+    c.arc(x+r, y+s-r, r, 0, 1.5*Math.PI, false);
+    c.closePath();
+    c.fill();
+}
+
 
 initialize = ()=>{
     canv = document.getElementById('particles');
@@ -271,7 +287,7 @@ initialize = ()=>{
     count = 0;
     speed = 100;
     let bg = "rgba(13, 31, 45, 0.3)";
-    field1 = new ParticleField(canv, w*2, h, dpr, s, sp, r, count, speed, colors, bg, false);
+    field1 = new ParticleField(canv, w*2, h, dpr, s, sp, r+1, count, speed, colors, bg, false);
     field1.init();
     field1.draw();
 

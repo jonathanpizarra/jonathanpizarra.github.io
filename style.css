@@ -192,6 +192,7 @@ body{
     top:20px;
     left:-20px;
     background-color: #0d1f2d55;
+    z-index: -100;
 }
 
 .about-container .title{
