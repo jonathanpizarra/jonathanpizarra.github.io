@@ -5,44 +5,71 @@
     <meta name="author" content="Jonathan Pizarra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects-style.css">
     <title>Jonathan Pizarra</title>
 </head>
 <body>
 
-    
+    <ul class="nav">
+        <li><a class='nav-item nav-home nav-underline-100 unselectable' href="#home">Home</a></li>
+        <li><a class='nav-item nav-about unselectable' href="#about">About</a></li>
+        <li><a class='nav-item nav-projects unselectable' href="#projects">Projects</a></li>
+        <li><a class='nav-item nav-contact unselectable' href="#contact">Contact</a></li>
+    </ul>
     
     <div class="block" id="home">
         <canvas id="particles"></canvas>
         <div id="stats"></div>
        
-        <div class="row top">
-            <ul class="nav">
-                <li><a class='nav-item nav-home' href="#home">Home</a></li>
-                <li><a class='nav-item nav-about' href="#about">About</a></li>
-                <li><a class='nav-item nav-projects' href="#projects">Projects</a></li>
-                <li><a class='nav-item nav-contact' href="#contact">Contact</a></li>
-            </ul>
+        <div class="space top">
+            
         </div>
-        <div class="row mid">
-            <p class="desc name">Lorem ipsum dolor</p>
-            <p class="desc web">Web & App Dev by degree</p>
-            <p class="desc game">Game Dev by hobby</p>
+        <div class="space mid">
+            <p class="desc name unselectable">Lorem ipsum dolor</p>
+            <p class="desc web unselectable">Web & App Dev by degree</p>
+            <p class="desc game unselectable">Game Dev by hobby</p>
             <p class="desc construction">Site Under Construction</p>
         </div>
-        <div class="row bot">
+        <div class="space bot">
             
         </div>
         
     </div>
 
     <div class="block" id="about">
-        <h2 class="title">About</h2>
+        <canvas id="particles2"></canvas>
+        <div class="about-container">
+            <h2 class="title">About</h2>
+            <div class="about-details">
+                <p>Hi! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend sed est at semper. Maecenas mi nisi, dictum sit amet magna eget, convallis hendrerit est. Integer rutrum odio eros, facilisis condimentum risus pretium iaculis. <br/><br/>Praesent posuere est vitae ex tincidunt, vulputate molestie urna tempor. Etiam id leo quis ipsum ultricies ultrices. Fusce viverra malesuada rutrum. Suspendisse et sollicitudin metus. Aliquam ac enim vitae orci vulputate egestas ac et velit. Suspendisse nec consectetur dolor. Cras molestie libero et erat gravida, nec sodales felis hendrerit. Cras finibus rutrum diam, ac ornare eros. Aenean cursus facilisis elit. Donec et lobortis ante. Morbi in mi fermentum, porttitor metus vel, tempor orci.</p>
+            </div>
+        </div>
+        
     </div>
 
     <div class="block" id="projects">
-        <h2 class="title">Projects</h2>
+        <div id="projects-bg"></div>
+        <table id="projects-container">
+            <tbody>
+                <tr class="row row1">
+                    <td class="col col1 unselectable">Tetris Clone</td>
+                    <td class="col col2 unselectable">Slide Puzzle</td>
+                    <td class="col col3 unselectable">Particle Collision</td>
+                </tr>
+                <tr class="row row2">
+                    <td class="col col4 unselectable">Circular Times Table</td>
+                    <td class="col col5 unselectable">Proposition Evaluator</td>
+                    <td class="col col6 unselectable">PipBoy UI</td>
+                </tr>
+                <tr class="row row3">
+                    <td class="col col7 unselectable">Game of Life</td>
+                    <td class="col col8 unselectable">Minesweeper</td>
+                    <td class="col col9 unselectable">Be the next</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
@@ -50,7 +77,11 @@
         <h2 class="title">Contact</h2>
 
     </div>
-    <script src="particles.js"></script>
+    <!-- <script src="particles.js"></script> -->
+
+    <script src="particles2.js"></script>
+
+    <script src="script.js"></script>
     
 </body>
 </html>

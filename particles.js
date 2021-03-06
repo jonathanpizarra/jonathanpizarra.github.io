@@ -6,6 +6,7 @@ let particles = [];
 // let colors = ["#f788e3", "#9b88f7", "#88e3f7", "#f7f588", "#95f788", "#f7b188"];
 // let colors = ["#93d7e6", "#edea9f"];
 let colors = ["#88e3f7", "#f7f588"];
+
 let default_directions = [[0,20], [20,0], [0,-20], [-20,0]];
 let scroll_width;
 
@@ -15,8 +16,7 @@ div.innerHTML = "<p style='color:#f788e3;' >#f788e3</p>" +
                 "<p style='color:#88e3f7;' >#88e3f7</p>" +
                 "<p style='color:#f7f588;' >#f7f588</p>" +
                 "<p style='color:#95f788;' >#95f788</p>" +
-                "<p style='color:#f7b188;' >#f7b188</p>" ;
-                
+                "<p style='color:#f7b188;' >#f7b188</p>" ;                
 
 document.getElementById("projects").append(div);
 
@@ -74,6 +74,28 @@ class Particle{
         }
     }
 
+}
+
+class ParticleField{
+    constructor(canv, w, h, dpr, s, sp, r, count, speed, colors){
+        this.canv = canv;
+        this.w = w;
+        this.h = h;
+        this.dpr = dpr;
+        this.s = s;
+        this.sp = sp;
+        this.r = r;
+        this.count = count;
+        this.speed = speed;
+        this.colors = colors;
+
+        this.c = this.canv.getContext('2d');
+        this.canv.width = w;
+        this.canv.height = h;
+    }
+
+
+    
 }
 
 const init = ()=>{
@@ -179,6 +201,8 @@ const draw = ()=>{
 
         if(start) start = false;
         stats.innerHTML = "Particles: " + particles.length;
+
+        clearInterval(setInt);
 
     },speed);
 
