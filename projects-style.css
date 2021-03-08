@@ -24,14 +24,20 @@
 }
 
 .row .col{
-    border:1px solid var(--white);
-    text-align: center;
-    font-size: 20px;
-    font-weight: 400;
+    border-right: 0.5px solid #FAE1DF77;
+    border-bottom: 0.5px solid #FAE1DF77;
+    font-size: 14px;
+    font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.row .col3,.row  .col6,.row  .col9{
+    border-right: none;
+}
+.row .col7,.row  .col8,.row  .col9{
+    border-bottom: none;
 }
 
 .row .col:hover{
@@ -42,7 +48,14 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color:teal;
+    /* background-color:teal; */
+    z-index: 500;
+}
+
+#projects-bg canvas{
+    overflow: hidden;
+    position: relative;
+    z-index: 200;
 }
 
 #proj-particles{
@@ -55,4 +68,61 @@
     height:100vh;
     position: absolute;
     background-color: #E4C3AD;
+    opacity:0;
+    transition: opacity 0.5s;
+}
+
+.projects-bg-img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.prop-container{
+    display: flex;
+}
+
+.prop-text{
+    margin: auto;
+    font-size: 14px;
+    background-color: #111;
+    color:yellowgreen;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: relative;
+    z-index: 500;
+    padding-top:20px;
+    
+}
+
+#conway-canv{
+    width:100%;
+    height:100%;
+    z-index: 100;
+  
+}
+
+#conway-stats{
+    position:absolute;
+    bottom:10px;
+    right:50px;
+    font-family: monospace;
+    font-size: 16px;
+    color:cyan;
+    z-index: 500;
+}
+
+#pip-container{
+    width:100%;
+    height:100%;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+}
+
+#pip-boy-img{
+    filter:opacity(0.9) contrast(0.9);
+    min-height:100%;
+    opacity: 0;
+    transition: opacity 0.5s;
 }

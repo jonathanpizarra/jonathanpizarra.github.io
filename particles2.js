@@ -179,7 +179,6 @@ class ParticleField{
     draw = ()=>{
     
         this.setInt = setInterval(this.frame, this.speed);
-        console.log('drawing...')
     
     }
 

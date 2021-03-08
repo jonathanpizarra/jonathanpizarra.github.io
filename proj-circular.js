@@ -1,117 +1,147 @@
 
-const times_table = () => {    
-    const canv = document.getElementById("proj-circular");
+class CircularTimesTable{
     
+    constructor(canv){
+        this.canv = canv;
     
-    const h = window.innerHeight;
-    const w = window.innerWidth;
-    const pxr = window.devicePixelRatio;
-    let hp = h*pxr;
-    let wp = w*pxr;
-    let r = hp/2-10;
-    var setInt, setInt2 ;
-    //color vars
-    let color;
-    let red = 65;
-    let green = 15;
-    let blue = 245;
-    let redP = -1;
-    let greenP = 1;
-    let blueP = -1;
-    //dimensions
-    canv.height = hp;
-    canv.width = wp;
-    // canv.style.height = h + "px";
-    // canv.style.width = w + "px";
-    let c = canv.getContext("2d");
-    c.lineWidth = 1;
-    //
-    let rad =(deg)=> deg * Math.PI / 180;
-    let dotX =(a)=> (wp/2) + r * Math.cos(rad(a));
-    let dotY =(a)=> (hp/2) + r * Math.sin(rad(a));
-    let count = 0;
-    
-    let clearc =()=>{
-        c.beginPath();
-        c.fillStyle = "#E4C3AD";
-        c.fillRect(0,0,wp,hp);
-        c.closePath();
+        this.h = window.innerHeight;
+        this.w = window.innerWidth;
+        this.pxr = window.devicePixelRatio;
+        this.pxr = 2;
+        this.hp = this.h * this.pxr;
+        this.wp = this.w * this.pxr;
+        this.r = this.hp/2-10;
+        //
+        this.setInt1;
+        this.setInt2 ;
+        //color vars
+        this.color;
+        this.red = 65;
+        this.green = 15;
+        this.blue = 245;
+        this.redP = -1;
+        this.greenP = 1;
+        this.blueP = -1;
+        //dimensions
+        this.canv.height = this.hp;
+        this.canv.width = this.wp;
+        // canv.style.height = h + "px";
+        // canv.style.width = w + "px";
+        this.c = this.canv.getContext("2d");
+        this.c.lineWidth = 1;
+        //
+        
+        this.count = 0;
     }
     
-    let arc =()=>{
-       c.beginPath();
-       c.arc(wp/2, hp/2, r, 0, Math.PI*2);
-       c.closePath();
-       c.strokeStyle = "blue";
-       c.stroke();
+    rad =(deg)=> deg * Math.PI / 180;
+    dotX =(a)=> (this.wp/2) + this.r * Math.cos(this.rad(a));
+    dotY =(a)=> (this.hp/2) + this.r * Math.sin(this.rad(a));
+    
+    clearc =()=>{
+        this.c.beginPath();
+        this.c.fillStyle = "#E4C3AD";
+        this.c.fillRect(0, 0, this.wp, this.hp);
+        this.c.closePath();
     }
     
-    let draw_lines =(count)=>{
-        color = update_color();
+    arc =()=>{
+        this.c.beginPath();
+        this.c.arc(this.wp/2, this.hp/2, this.r, 0, Math.PI*2);
+        this.c.closePath();
+        this.c.strokeStyle = "blue";
+        this.c.stroke();
+    }
+    
+    draw_lines = (count)=>{
+        this.color = this.update_color();
         for(let j1=0; j1<500; j1++){
-            c.beginPath();
-            c.moveTo(dotX(j1*0.72), dotY(j1*0.72));
-            c.lineTo(dotX(j1*0.72*count), dotY(j1*0.72*count));
-            c.closePath();
-            c.strokeStyle = color;
-            c.stroke();
+            this.c.beginPath();
+            this.c.lineWidth = 1;
+            this.c.moveTo(this.dotX(j1*0.72), this.dotY(j1*0.72));
+            this.c.lineTo(this.dotX(j1*0.72*count), this.dotY(j1*0.72*count));
+            this.c.closePath();
+            this.c.strokeStyle = this.color;
+            this.c.stroke();
         }
     }
     
-    let update_color =()=>{
-        red += redP;
-        green += greenP;
-        blue += blueP;
+    update_color =()=>{
+        this.red += this.redP;
+        this.green += this.greenP;
+        this.blue += this.blueP;
         
-        if(blue <= 0 || blue >= 255)
-            blueP = -blueP;
-        if(green <= 0 || green >= 200)
-            greenP = -greenP;
-        if(red <= 0 || red >= 255)
-            redP = -redP;
-        return "rgb(" + red + "," + green + "," + blue + ")";
+        if(this.blue <= 0 || this.blue >= 255)
+            this.blueP = -this.blueP;
+        if(this.green <= 0 || this.green >= 200)
+            this.greenP = -this.greenP;
+        if(this.red <= 0 || this.red >= 255)
+            this.redP = -this.redP;
+        return "rgb(" + this.red + "," + this.green + "," + this.blue + ")";
     }
     
-    let init1 =()=>{
-      clearInterval(setInt2);
-      setInt = setInterval(()=>{
+    init1 = ()=>{
+      clearInterval(this.setInt2);
+      this.setInt1 = setInterval(()=>{
     
-        clearc();
-        arc();
-        draw_lines(count);
+        this.clearc();
+        this.arc();
+        this.draw_lines(this.count);
     
-        count+=0.05;
-    
+        this.count+=0.04;
+        this.draw_stats();
       },70);
     }
     
-    let init2 =()=>{
-        clearc();
-        clearInterval(setInt);
+    init2 =()=>{
+        this.clearc();
+        clearInterval(this.setInt);
         let input = prompt("Enter a number.\nTry 26, 56, 100, 102, 112, 76 or 72");
         
         let j1 = 0;
         stats.innerHTML = "N = " + input;
-        setInt2 = setInterval(()=>{
-            arc();
-            c.beginPath();
-            c.moveTo(dotX(j1*0.72), dotY(j1*0.72));
-            c.lineTo(dotX(j1*input*0.72), dotY(j1*input * 0.72));
-            c.closePath();
-            c.strokeStyle = update_color();
-            c.stroke();
+        this.setInt2 = setInterval(()=>{
+            this.arc();
+            this.c.beginPath();
+            this.c.moveTo(this.dotX(j1*0.72), this.dotY(j1*0.72));
+            this.c.lineTo(this.dotX(j1*input*0.72), this.dotY(j1*input * 0.72));
+            this.c.closePath();
+            this.c.strokeStyle = this.update_color();
+            this.c.stroke();
             j1++;
-            update_color();
-            update_color();
+            this.update_color();
+            this.update_color();
             if(j1 >= 500){
-                clearInterval(setInt2);
+                clearInterval(this.setInt2);
                 return;
             }
         },70) ;
     }
-   
-    
-    init1();
+
+    stop1 = ()=>{
+        clearInterval(this.setInt1);
+    }
+
+    stop2 = ()=>{
+        clearInterval(this.setInt2);
+    }
+
+    draw_stats = ()=>{
+        this.c.beginPath();
+        this.c.fillStyle = "#0d1f2d";
+        this.c.font = "28px Montserrat";
+        this.c.fillText('N = ' + this.count.toFixed(3), 10, 25);
+        this.c.closePath();
+    }
+
+    setColor(r, g, b, rP, gP, bP){
+        this.red = r;
+        this.green = g;
+        this.blue = b;
+        this.redP = rP;
+        this.greenP = gP;
+        this.blueP = bP;
+    }
     
     
     }
