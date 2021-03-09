@@ -2,17 +2,83 @@ let projects_bg = document.getElementById('projects-bg');
 let cols = document.getElementsByClassName('col');
 let navs = document.getElementsByClassName('nav-item');
 
+let p1 = document.getElementsByClassName('col1')[0];
+let p2 = document.getElementsByClassName('col2')[0];
 let p3 = document.getElementsByClassName('col3')[0];
 let p4 = document.getElementsByClassName('col4')[0];
 let p5 = document.getElementsByClassName('col5')[0];
 let p6 = document.getElementsByClassName('col6')[0];
 let p7 = document.getElementsByClassName('col7')[0];
+let p8 = document.getElementsByClassName('col8')[0];
 
 const change_text_color = (els, color)=>{
     for(e of els){
         e.style.color = color;
     }
 }
+
+const add_class = (els, add, rem)=>{
+    for(e of els){
+        e.classList.remove(rem)
+        e.classList.add(add);
+    }
+}
+
+
+init_tetris = ()=>{
+    let canv;
+    let tetris;
+    let board, current, next, coords, score;
+    let start = true;
+    p1.addEventListener('mouseover', function(){
+        projects_bg.innerHTML = "<canvas id='tetris-canv'></canvas>";
+        canv = document.getElementById('tetris-canv');
+        if(start){
+            tetris = new Tetris(canv);
+            tetris.init();
+            tetris.animate();
+            start = false;
+        }else{
+            tetris = new Tetris(canv);
+            tetris.init();
+            tetris.board = board;
+            tetris.current = current;
+            tetris.next = next;
+            tetris.coords = coords;
+            tetris.score = score;
+            tetris.animate();
+        }
+        projects_bg.style.backgroundColor = '#333';
+        change_text_color(cols, '#E4C3AD');
+        add_class(navs, 'light', 'dark');
+    });
+
+    p1.addEventListener('mouseleave', function(){
+        tetris.stopAnimation();
+        board = tetris.board;
+        current = tetris.current;
+        next = tetris.next;
+        coords = tetris.coords;
+        score = tetris.score;
+    })
+}
+init_tetris();
+
+init_slide = ()=>{
+    let box, slide;
+
+    p2.addEventListener('mouseover', function(){
+        projects_bg.innerHTML = "<div id='box'></div>"
+        slide = new SlidePuzzle();
+        slide.matrix();
+        slide.init_slide();
+    })
+
+    p2.addEventListener('mouseleave', function(){
+
+    })
+}
+init_slide();
 
 init_particles = ()=>{
     let canv, c, w, h, s, sp, r, dpr, count, speed;
@@ -47,6 +113,7 @@ init_particles = ()=>{
             field1.draw();
         } 
         change_text_color(cols, '#FAE1DF');
+        add_class(navs, 'light', 'dark');
     });
 
     p3.addEventListener('mouseleave', function(){
@@ -84,6 +151,7 @@ init_circular = ()=>{
         }
         times_table.init1();
         change_text_color(cols, '#0d1f2d');
+        add_class(navs, 'dark', 'light');
         setTimeout(()=>canv.style.opacity = 1, 50);
     });
     
@@ -111,6 +179,7 @@ init_propositional = ()=>{
         
         setTimeout(()=>txt.style.opacity = 1,50);
         change_text_color(cols, '#E4C3AD');
+        add_class(navs, 'light', 'dark');
     });
 
     p7.addEventListener("mouseleave", function(){
@@ -131,6 +200,7 @@ init_conway = ()=>{
         conway = new Conway(canv, stats);
         conway.init();
         change_text_color(cols, '#E4C3AD');
+        add_class(navs, 'light', 'dark');
        
     });
 
@@ -144,8 +214,9 @@ init_conway();
 init_pipboy = ()=>{
     p6.addEventListener('mouseover', function(){
         projects_bg.innerHTML = "<div id='pip-container'><img id='pip-boy-img' src='images/pip-boy.png'/></div>";
-        setTimeout(()=>document.getElementById('pip-boy-img').style.opacity = 1, 50);
+        setTimeout(()=>{document.getElementById('pip-boy-img').style.opacity = 1}, 50);
         change_text_color(cols, '#E4C3AD');
+        add_class(navs, 'light', 'dark');
     })
 
     p6.addEventListener('mouseleave', function(){
@@ -153,3 +224,22 @@ init_pipboy = ()=>{
     })
 }
 init_pipboy();
+
+init_minesweeper = ()=>{
+    let mine;
+    let start = true;
+    p8.addEventListener('mouseover', function(){
+        projects_bg.innerHTML = "<div id='mine-tab'></div>";
+        projects_bg.style.backgroundColor = "#E4C3AD";
+            mine = new Minesweeper();
+            mine.init();
+            mine.simulate_click();
+        change_text_color(cols, "#0d1f2d");
+        add_class(navs, 'dark', 'light');
+    })
+
+    p8.addEventListener('mouseleave', function(){
+
+    })
+}
+init_minesweeper();

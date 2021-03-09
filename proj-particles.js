@@ -1,17 +1,9 @@
-let canv, c, w, h, s, sp, r, dpr, width, height, count, speed, stats;
-let setInt;
-let field1, field2;
 
-let particles = [];
 // let colors = ["#ade4b3", "#ade4df", "#adc5e4", "#beade4", "#e4addf"];
 // let colors = ["#f788e3", "#9b88f7", "#88e3f7", "#f7f588", "#95f788", "#f7b188"];
 // let colors = ["#93d7e6", "#edea9f"];
 // let colors = ["#88e3f7", "#f7f588"];
-let colors = ["#E4C3AD", "#546A7B"];
-let colors2 = ["#9EA3B0", "#FAE1DF"];
 
-let default_directions = [[0,20], [20,0], [0,-20], [-20,0]];
-let scroll_width;
 
 class Particle{
 
@@ -83,6 +75,7 @@ class ParticleField{
         this.colors = colors;
         this.bg = bg;
         this.scroll_width = getScrollbarWidth();
+        this.default_directions = [[0,20], [20,0], [0,-20], [-20,0]];
         // this.w -= this.scroll_width;
 
         this.c = this.canv.getContext('2d');
@@ -111,9 +104,9 @@ class ParticleField{
                 color = this.colors[Math.floor(Math.random() * this.colors.length)];
                 // color = colors[0]; // testing
                 this.particles.push(new Particle(m, n, color, this.s, this.s, this.w, this.h));
-                this.particles[this.count].dir_x = default_directions[this.count%4][0];
-                this.particles[this.count].dir_y = default_directions[this.count++%4][1];
-               // console.log(color, m, n);
+                this.particles[this.count].dir_x = this.default_directions[this.count%4][0];
+                this.particles[this.count].dir_y = this.default_directions[this.count++%4][1];
+                // console.log(color, m, n);
             }
         }
     
@@ -135,7 +128,7 @@ class ParticleField{
             }
             this.c.beginPath();
             this.c.fillStyle = this.particles[n].color;
-            styledRect(this.c, this.particles[n].x, this.particles[n].y, this.s);
+            styledRect(this.c, this.particles[n].x, this.particles[n].y, this.r, this.s);
             // c.fillRect(particles[n].x, particles[n].y, s, s);
             // c.closePath();
         }
@@ -151,17 +144,17 @@ class ParticleField{
                         len -= 2;
                     }else{
 
-                        this.particles[m].dir_x = default_directions[0][0];
-                        this.particles[m].dir_y = default_directions[0][1];
-                        this.particles[n].dir_x = default_directions[1][0];
-                        this.particles[n].dir_y = default_directions[1][1];
+                        this.particles[m].dir_x = this.default_directions[0][0];
+                        this.particles[m].dir_y = this.default_directions[0][1];
+                        this.particles[n].dir_x = this.default_directions[1][0];
+                        this.particles[n].dir_y = this.default_directions[1][1];
 
                         for(let p=0; p<2; p++){
                             this.particles.push(new Particle(this.particles[n].x, this.particles[n].y, this.colors[Math.floor(Math.random() * this.colors.length)], this.s, this.speed, this.w, this.h));
-                            this.particles[this.particles.length-1].dir_x = default_directions[2+p][0];
-                            this.particles[this.particles.length-1].dir_y = default_directions[2+p][1]
+                            this.particles[this.particles.length-1].dir_x = this.default_directions[2+p][0];
+                            this.particles[this.particles.length-1].dir_y = this.default_directions[2+p][1]
                             this.c.fillStyle = this.particles[this.particles.length-1].c;
-                            roundRect(this.c, this.particles[this.particles.length-1].x, this.particles[this.particles.length-1].y, this.s);
+                            roundRect(this.c, this.particles[this.particles.length-1].x, this.particles[this.particles.length-1].y, this.r, this.s);
 
                         }
                         
@@ -216,7 +209,7 @@ class ParticleField{
             let color = this.colors[Math.floor(Math.random() * this.colors.length)];
             this.particles.push(new Particle(x, y, color, this.s, this.s, this.w, this.h));
             this.c.fillStyle = this.particles[this.particles.length-1].color;
-            styledRect(this.c, this.particles[this.particles.length-1].x, this.particles[this.particles.length-1].y, this.s);
+            styledRect(this.c, this.particles[this.particles.length-1].x, this.particles[this.particles.length-1].y, this.r, this.s);
         }
         
         
@@ -249,7 +242,7 @@ function getScrollbarWidth() {
   
 }
 
-const roundRect = (c, x, y, s)=>{
+const roundRect = (c, x, y, r, s)=>{
     c.beginPath();
     c.moveTo(x + r, y);
     c.lineTo(x+r, y);
@@ -264,7 +257,7 @@ const roundRect = (c, x, y, s)=>{
     c.fill();
 }
 
-const styledRect = (c, x, y, s)=>{
+const styledRect = (c, x, y, r, s)=>{
     c.beginPath();
     c.arc(x+r, y+r, r, 0.5*Math.PI, 2*Math.PI, false);
     c.arc(x+s-r, y+r, r, Math.PI, 0.5*Math.PI, false);
@@ -276,17 +269,20 @@ const styledRect = (c, x, y, s)=>{
 
 
 initialize = ()=>{
-    canv = document.getElementById('particles');
-    w = window.innerWidth;
-    h = window.innerHeight;
-    dpr = 2;
-    s = 8;
-    sp = 4;
-    r = 2;
-    count = 0;
-    speed = 100;
+    let canv = document.getElementById('particles');
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+    let dpr = 2;
+    let s = 8;
+    let sp = 4;
+    let r = 2;
+    let count = 0;
+    let speed = 100;
     let bg = "rgba(13, 31, 45, 0.3)";
-    field1 = new ParticleField(canv, w*2, h, dpr, s, sp, r+1, count, speed, colors, bg, false);
+    let colors = ["#E4C3AD", "#546A7B"];
+    let colors2 = ["#9EA3B0", "#FAE1DF"];
+
+    let field1 = new ParticleField(canv, w*2, h, dpr, s, sp, r+1, count, speed, colors, bg, false);
     field1.init();
     field1.draw();
 
@@ -302,9 +298,9 @@ initialize = ()=>{
 initialize();
 
 window.onresize = function(){
-    clearInterval(field1.setInt);
-    field1.init();
-    field1.draw();
+    // clearInterval(field1.setInt);
+    // field1.init();
+    // field1.draw();
 
     // clearInterval(field2.setInt);
     // field2.particles = [];

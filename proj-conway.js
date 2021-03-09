@@ -46,10 +46,10 @@ class Conway{
 
         this.p6 = ()=>{
             let p = [];
-            let l = w > h? h/s: w/s;
+            let l = this.w > this.h? this.h/this.s: this.w/this.s;
 
-            for(let y=0; y<h/s; y++){
-                for(let x=0; x<w/s; x++){
+            for(let y=0; y<this.h/this.s; y++){
+                for(let x=0; x<this.w/this.s; x++){
                     if(x == y || (x+y == l-1) || (x-l == y) || (x+y == 2 * l -2) ){
                         p.push([x,y]);
                     }
