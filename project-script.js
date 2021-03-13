@@ -48,7 +48,7 @@ init_tetris = ()=>{
             tetris.score = score;
             tetris.animate();
         }
-        projects_bg.style.backgroundColor = '#333';
+        projects_bg.style.backgroundColor = '#0d1f2d';
         change_text_color(cols, '#E4C3AD');
         add_class(navs, 'light', 'dark');
     });
@@ -171,7 +171,7 @@ init_propositional = ()=>{
         projects_bg.innerHTML = "<div class='prop-container'><pre class='prop-text'></pre></div>";
         txt = document.getElementsByClassName('prop-text')[0];
         prop = new PropositionAnimation(txt);
-        projects_bg.style.backgroundColor = "#111";
+        projects_bg.style.backgroundColor = "#0d1f2d";
         if(rehover){
             prop.start = index;
         }
@@ -199,8 +199,8 @@ init_conway = ()=>{
         canv = document.querySelector('#conway-canv');
         conway = new Conway(canv, stats);
         conway.init();
-        change_text_color(cols, '#E4C3AD');
-        add_class(navs, 'light', 'dark');
+        change_text_color(cols, '#0d1f2d');
+        add_class(navs, 'dark', 'light');
        
     });
 
@@ -212,15 +212,21 @@ init_conway();
 
 
 init_pipboy = ()=>{
+    let container, pip;
     p6.addEventListener('mouseover', function(){
-        projects_bg.innerHTML = "<div id='pip-container'><img id='pip-boy-img' src='images/pip-boy.png'/></div>";
-        setTimeout(()=>{document.getElementById('pip-boy-img').style.opacity = 1}, 50);
+        projects_bg.innerHTML = "<div id='pip-container'></div>";
+        projects_bg.style.backgroundColor = "#0d1f2d";
+        projects_bg.style.display = "flex";
+        container = document.getElementById('pip-container');
+        pip = new PipAnimation("pip-container");
+        pip.animate();
+        setTimeout(()=>{container.style.opacity = 1}, 50);
         change_text_color(cols, '#E4C3AD');
         add_class(navs, 'light', 'dark');
     })
 
     p6.addEventListener('mouseleave', function(){
-
+        projects_bg.style.display = "block";
     })
 }
 init_pipboy();

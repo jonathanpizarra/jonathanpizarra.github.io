@@ -178,7 +178,7 @@ class Tetris{
     }
 
     drawScore =()=>{
-        let color = "#333";
+        let color = "#0d1f2d";
         this.roundRect(190, 25, 110, 300, 5, "#777", true);
         
         this.c.beginPath();

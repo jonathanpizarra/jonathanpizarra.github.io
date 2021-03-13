@@ -72,7 +72,7 @@ class Conway{
             this.c.moveTo(x*this.s, 0);
             this.c.lineTo(x*this.s, this.h);
             this.c.closePath();
-            this.c.strokeStyle = "#F9F87177";
+            this.c.strokeStyle = "#0d1f2d77";
             this.c.lineWidth = 0.5;
             this.c.stroke();
         }
@@ -82,7 +82,7 @@ class Conway{
             this.c.moveTo(0, y*this.s);
             this.c.lineTo(this.w, y*this.s);
             this.c.closePath();
-            this.c.strokeStyle = "#F9F87177";
+            this.c.strokeStyle = "#0d1f2d77";
             this.c.lineWidth = 0.5;
             this.c.stroke();
         }
@@ -91,7 +91,7 @@ class Conway{
     clearRect = ()=>{
         this.c.beginPath();
         this.c.rect(0,0,this.w,this.h);
-        this.c.fillStyle = "#111";
+        this.c.fillStyle = "#E4C3AD";
         this.c.fill();
         this.c.closePath();
     }
@@ -107,7 +107,8 @@ class Conway{
         for(let y=0; y<this.h/this.s; y++){
             for(let x=0; x<this.w/this.s; x++){
                 if(this.cells[y][x] == 1){
-                    this.drawRect(x, y, "#77FFC3");
+                    // this.drawRect(x, y, "#77FFC3");
+                    this.drawRect(x, y, "#0d1f2d");
                 }
             }
         }

@@ -87,7 +87,7 @@
 .prop-text{
     margin: auto;
     font-size: 14px;
-    background-color: #111;
+    background-color: var(--dark);
     color:yellowgreen;
     opacity: 0;
     transition: opacity 0.5s;
@@ -110,23 +110,46 @@
     right:50px;
     font-family: monospace;
     font-size: 16px;
-    color:cyan;
+    color:var(--dark);
     z-index: 500;
 }
 
 #pip-container{
-    width:100%;
-    height:100%;
-    background-color: #222;
+    width:700px;
+    height:500px;
+    background-color: transparent;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+}
+
+#pip-container img{    
+    height:100%;
+    position: absolute;
+        top:0;
+        left:-92px;
+    clip-path: inset(1px 105px 1px 92px);
+    clip-path: inset(1px 120px 1px 107px);
+
 }
 
 #pip-boy-img{
     filter:opacity(0.9) contrast(0.9);
-    min-height:100%;
+    height:90%;
     opacity: 0;
     transition: opacity 0.5s;
+}
+
+
+
+.pip-visible{
+    display: block;
+}
+
+.pip-invisible{
+    display: none;
 }
 
 #tetris-canv{

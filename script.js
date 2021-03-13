@@ -27,6 +27,7 @@ const init_btns = ()=>{
         home_btn.classList.remove('nav-underline-100');
         projects_btn.classList.remove('nav-underline-100');
         contact_btn.classList.remove('nav-underline-100');
+        add_class(all_btns, 'dark', 'light');
     })
 
     projects_btn.addEventListener('click', function(){
