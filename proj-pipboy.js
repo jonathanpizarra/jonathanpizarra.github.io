@@ -16,7 +16,6 @@ class PipAnimation{
     animate = ()=>{
         let img;
         this.setInt = setInterval(()=>{
-             console.log('i:', this.i)
             for(let x=0; x<7; x++){
                 if(x == this.i){
                     this.images[x].className = "pip-visible";

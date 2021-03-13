@@ -11,6 +11,9 @@ class CircularTimesTable{
         this.hp = this.h * this.pxr;
         this.wp = this.w * this.pxr;
         this.r = this.hp/2-10;
+        if(this.hp > this.wp){
+            this.r = this.wp/2-10;
+        }
         //
         this.setInt1;
         this.setInt2 ;

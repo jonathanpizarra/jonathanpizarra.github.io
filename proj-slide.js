@@ -6,7 +6,7 @@ class SlidePuzzle{
         this.cell_count = 0;
         this.titles = ["The Quote"];
         this.images = ["images/quote.jpg"];
-        this.arrSize = [6]; // board sizes for every level
+        this.arrSize = [6]; // board sizes for every level. should be divisible by n.
         this.level = 1;
         this.current_level_moves = 0;
         this.moves_per_level = [];
@@ -15,8 +15,6 @@ class SlidePuzzle{
         this.size = this.n / this.arrSize[this.level-1] // width and height of each piece. 
         this.speed = 500; // speed of random moves
         this.random_moves = 500000;
-        this.solved_state = [];
-        this.current_state = [];
 
         this.create_table();
     }
@@ -24,22 +22,16 @@ class SlidePuzzle{
     create_table = ()=>{
         // resetting previous values
         this.table = $('<table border="0" id="slide-puzzle-table" class="table1"></table>');
-        this.current_state = [];
-        this.solved_state = [];
         this.cell_count = 0;
 
         // populating table with td. 
         // populating current_state and solved_state.
         for(let i=0; i<this.arrSize[this.level-1]; i++) {
             let row = $('<tr></tr>');
-            this.current_state[i] = [];
             for(let j=0; j<this.arrSize[this.level-1]; j++){
                 this.cell_count++;
                 let cell = $('<td class="cell" data-xy="' + j + "," + i + '" data-value="' + this.cell_count + '">' + '' + '</td>');
-                cell.css({"top": (this.size*i) + "px", "left": (this.size*j) + "px", "width": this.size, "height": this.size});
-                this.solved_state.push(this.cell_count);
-                this.current_state[i].push(this.cell_count);
-                
+                cell.css({"top": (this.size*i) + "px", "left": (this.size*j) + "px", "width": this.size, "height": this.size});                
                 row.append(cell);
                 this.add_image(cell);
             }
@@ -75,15 +67,12 @@ class SlidePuzzle{
         // coercing the values into integer to avoid string concatenation.
         let x = +attr.split(",")[0];
         let y = +attr.split(",")[1];
-        let value = this.current_state[y][x];
         this.last_cell.css({"top":y * this.size, "left":x * this.size});
-        this.current_state[y][x] = +this.last_cell.attr("data-value");
         
         attr = cell.attr("data-xy");
         x = +attr.split(",")[0];
         y = +attr.split(",")[1];
         cell.css({"top":y * this.size, "left":x * this.size});
-        this.current_state[y][x] = value;
     }
 
     check_if_swappable = (c)=>{
@@ -120,20 +109,6 @@ class SlidePuzzle{
     check_if_solved = ()=> this.solved_state.join("-") == this.current_state.flat(2).join("-");
     
     randomize = ()=>{
-        // speeding up the animation
-        //$(".cell").css("transition", "top 0.05s, left 0.05s");
-
-        let count = 0; //
-        // $("#loadingText").html("Loading Level " + this.level );
-        // $("#loading").fadeIn(300);
-        // $("#level").html("Level "+ this.level);
-        // $("#title").html("'" + this.titles[this.level-1] + "'");
-        // if(this.level > this.arrSize.length-1) {
-        //    $("#pic" + (this.level+1)).css("display","block");     
-        // }else {
-        //    $("#pic" + this.level).css("display","block");
-        // }
-        
         this.animation = setInterval(()=>{
             
             let neighbors = [];
@@ -149,7 +124,7 @@ class SlidePuzzle{
             this.chosen = neighbors[Math.floor(Math.random() * neighbors.length)];   
             this.chosen = $("td[data-xy='" + this.chosen.x + "," + this.chosen.y + "']");
 
-            if(count == 0){
+            if(this.current_level_moves == 0){
                 this.previous_move = this.chosen;
             }else{
                 while(this.previous_move.attr("data-value") == this.chosen.attr("data-value")){
@@ -160,17 +135,7 @@ class SlidePuzzle{
             }
             
             this.swap_cell(this.chosen);
-            count++;
-            
-            // end randomization
-            if(count >= this.random_moves * this.level ){
-                this.stop();
-                $("#loading").fadeOut(500);
-                if(this.check_if_solved()) {
-                    this.randomize();
-                }
-                return;
-            }
+            this.current_level_moves++;
         }, this.speed);
     }
 

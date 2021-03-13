@@ -291,6 +291,10 @@
     position: absolute;
     transition: top 0.5s, left 0.5s;
     border:0.5px solid var(--lessdark);
+    border-right:0.5px solid var(--dark);
+    border-bottom:0.5px solid var(--lessdark);
+    border-left:0.5px solid var(--mid);
+    border-top:0.5px solid var(--light);
     border-radius: 3px;
     width:40px;
     height:40px;
