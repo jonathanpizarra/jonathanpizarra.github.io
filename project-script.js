@@ -69,13 +69,14 @@ init_slide = ()=>{
 
     p2.addEventListener('mouseover', function(){
         projects_bg.innerHTML = "<div id='box'></div>"
-        slide = new SlidePuzzle();
-        slide.matrix();
-        slide.init_slide();
+        slide = new SlidePuzzle("#box");
+        slide.randomize();
+        change_text_color(cols, '#0d1f2d');
+        add_class(navs, 'dark', 'light');
     })
 
     p2.addEventListener('mouseleave', function(){
-
+        slide.stop();
     })
 }
 init_slide();
