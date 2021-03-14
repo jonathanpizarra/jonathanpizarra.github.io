@@ -176,7 +176,7 @@ body{
 
 .about-container{
     width:60%;
-    height:60%;
+    min-height:60%;
     padding:30px;
     background-color:rgba(250, 225, 223, 0.4) ;
     background-color: #0d1f2d88;

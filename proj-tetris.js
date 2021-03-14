@@ -1,3 +1,10 @@
+/**
+ *  VIEW FULL CODE HERE : https://code.sololearn.com/WmB23Nq4jxG9/#
+ * 
+ * 
+ */
+
+
 //////// variables  ///////////
 let cout = (t)=>console.log(t);
 /////////////////////////////////////

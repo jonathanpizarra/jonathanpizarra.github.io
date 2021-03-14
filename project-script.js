@@ -58,7 +58,9 @@ init_tetris = ()=>{
         projects_bg.style.backgroundColor = '#0d1f2d';
         change_text_color(cols, '#E4C3AD');
         add_class(navs, 'light', 'dark');
-        canv.classList.add('scale-effect');
+        setTimeout(() => {
+            canv.classList.add('scale-effect');
+        }, 100);
     });
 
     p1.addEventListener('mouseleave', function(){
@@ -71,7 +73,9 @@ init_tetris = ()=>{
         coords = tetris.coords;
         score = tetris.score;
         tetris = null;
-        canv.classList.remove('scale-effect');
+        setTimeout(() => {
+            canv.classList.remove('scale-effect');
+        }, 100);
     })
 }
 init_tetris();
@@ -82,20 +86,24 @@ init_slide = ()=>{
     p2.addEventListener('mouseenter', function(){
         projects_bg.innerHTML = "<div id='box'></div>";
         projects_bg.style.backgroundColor = "#E4C3AD";
+        box = document.getElementById("box");
         details[1].classList.add('details-show');
         slide = new SlidePuzzle("#box");
         slide.randomize();
         change_text_color(cols, '#0d1f2d');
         add_class(navs, 'dark', 'light');
-        box = document.getElementById("box");
-        box.classList.add('scale-effect');
+        setTimeout(() => {
+            box.classList.add('scale-effect');
+        }, 100);
     })
 
     p2.addEventListener('mouseleave', function(){
         slide.stop();
         slide = null;
         details[1].classList.remove('details-show');
-        box.classList.remove('scale-effect');
+        setTimeout(() => {
+            box.classList.remove('scale-effect');
+        }, 100);
     })
 }
 init_slide();
@@ -135,13 +143,17 @@ init_particles = ()=>{
         }
         change_text_color(cols, '#FAE1DF');
         add_class(navs, 'light', 'dark');
-        canv.classList.add('scale-effect');
+        setTimeout(() => {
+            canv.classList.add('scale-effect');
+        }, 100);
     });
 
     p3.addEventListener('mouseleave', function(){
-        canv.classList.remove("scale-effect");
         field1.stop();
         details[2].classList.remove('details-show');
+        setTimeout(() => {
+            canv.classList.remove("scale-effect");
+        }, 100);
     });
 }
 init_particles();
@@ -177,31 +189,44 @@ init_circular = ()=>{
         change_text_color(cols, '#0d1f2d');
         add_class(navs, 'dark', 'light');
         setTimeout(()=>canv.style.opacity = 1, 50);
+        setTimeout(() => {
+            canv.classList.add('scale-effect');
+        }, 100);
     });
     
     p4.addEventListener('mouseleave', function(){
         times_table.stop1();
         details[3].classList.remove('details-show');
+        setTimeout(() => {
+            canv.classList.remove('scale-effect');
+        }, 100);
     });
 }
 init_circular();
 
 init_conway = ()=>{
-    let conway, stats, canv;
+    let conway, stats, canv, div;
     p5.addEventListener('mouseenter', function(){
-        projects_bg.innerHTML = "<div id='conway-stats'></div><canvas id='conway-canv'></canvas>";
+        projects_bg.innerHTML = "<div id='conway-div'><div id='conway-stats'></div><canvas id='conway-canv'></canvas></div>";
         stats = document.getElementById('conway-stats');
         canv = document.querySelector('#conway-canv');
+        div = document.querySelector("#conway-div");
         conway = new Conway(canv, stats);
         conway.init();
         change_text_color(cols, '#0d1f2d');
         add_class(navs, 'dark', 'light');
         details[4].classList.add('details-show');
+        setTimeout(() => {
+            div.classList.add('scale-effect');
+        }, 100);
     });
 
     p5.addEventListener('mouseleave', function(){
         conway.stop();
         details[4].classList.remove('details-show');
+        setTimeout(() => {
+            div.classList.remove('scale-effect');
+        }, 100);
     })
 }
 init_conway();
@@ -220,11 +245,17 @@ init_pipboy = ()=>{
         change_text_color(cols, '#E4C3AD');
         add_class(navs, 'light', 'dark');
         details[5].classList.add('details-show');
+        setTimeout(() => {
+            container.classList.add('scale-effect');
+        }, 100);
     })
 
     p6.addEventListener('mouseleave', function(){
         projects_bg.style.display = "block";
         details[5].classList.remove('details-show');
+        setTimeout(() => {
+            container.classList.remove('scale-effect');
+        }, 100);
     })
 }
 init_pipboy();
@@ -236,9 +267,11 @@ init_propositional = ()=>{
     let prop;
     let index = 0;
     let rehover = false;
+    let prop_container;
     p7.addEventListener("mouseenter", function(){
         projects_bg.innerHTML = "<div class='prop-container'><pre class='prop-text'></pre></div>";
         txt = document.getElementsByClassName('prop-text')[0];
+        prop_container = document.getElementsByClassName("prop-container")[0];
         prop = new PropositionAnimation(txt);
         projects_bg.style.backgroundColor = "#0d1f2d";
         if(rehover){
@@ -250,6 +283,9 @@ init_propositional = ()=>{
         change_text_color(cols, '#E4C3AD');
         add_class(navs, 'light', 'dark');
         details[6].classList.add('details-show');
+        setTimeout(() => {
+            prop_container.classList.add('scale-effect');
+        }, 100);
     });
 
     p7.addEventListener("mouseleave", function(){
@@ -257,6 +293,9 @@ init_propositional = ()=>{
         prop.stop();
         rehover = true;
         details[6].classList.remove('details-show');
+        setTimeout(() => {
+            prop_container.classList.remove('scale-effect');
+        }, 100);
     });
 }
 init_propositional();
@@ -264,20 +303,29 @@ init_propositional();
 
 init_minesweeper = ()=>{
     let mine;
-    let start = true;
+    let tab;
+    let temp = document.getElementById('temp-container');
+
     p8.addEventListener('mouseenter', function(){
         projects_bg.innerHTML = "<div id='mine-tab'></div>";
         projects_bg.style.backgroundColor = "#E4C3AD";
+        tab = document.getElementById("mine-tab");
             mine = new Minesweeper();
             mine.init();
             mine.simulate_click();
         change_text_color(cols, "#0d1f2d");
         add_class(navs, 'dark', 'light');
         details[7].classList.add('details-show');
+        setTimeout(() => {
+            tab.classList.add('scale-effect');
+        }, 100);
     })
 
     p8.addEventListener('mouseleave', function(){
         details[7].classList.remove('details-show');
+        setTimeout(() => {
+            tab.classList.remove('scale-effect');
+        }, 100);
     })
 }
 init_minesweeper();
