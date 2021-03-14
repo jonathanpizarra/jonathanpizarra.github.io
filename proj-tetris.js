@@ -49,11 +49,9 @@ Piece.colors = ["violet", "orange", "blue", "lime", "red", "yellow", "cyan"];
 class Tetris{
     constructor(canv){
         this.canv = canv;
-        this.gameOver = document.getElementById("gameOver");
-        this.scoreText = document.getElementById("score");
         this.c = canv.getContext("2d");
         this.dpr = window.devicePixelRatio;
-        this.dpr = 3; // setting a default value
+        this.dpr = 2; // setting a default value
         this.height = 350;
         this.width = 300;
         this.h = this.height * this.dpr;
@@ -165,15 +163,6 @@ class Tetris{
         this.c.rect(25,25,150,300);
         this.c.fillStyle = "white";
         this.c.fill();
-        this.c.closePath();
-    }
-
-
-    drawText =()=>{
-        this.c.beginPath();
-        this.c.font = "12px Arial";
-        this.c.fillStyle = "blue";
-        this.c.fillText("TETRIS Clone by Jonathan Pizarra", 55, 15);
         this.c.closePath();
     }
 
@@ -313,8 +302,6 @@ class Tetris{
                 window.cancelAnimationFrame(this.rAF);
                 this.resetStats();
                 this.animate();
-                // scoreText.innerHTML = "Score: " + score + "<br><br>Level: " + level + "<br><br>Lines: " + lines;
-                // gameOver.style.top = "0px";
             }
         }else{
             this.Y++;// go down
@@ -433,12 +420,6 @@ class Tetris{
             
             this.then = this.now - (this.change % this.interval);
             this.counter++;
-            
-            // if(this.counter % 10 === 0){
-            //     this.score++;
-            //     this.drawScore();
-            //     this.drawNext();
-            // }
 
             if(this.counter >= this.fps/this.level){
                 this.counter = 0;
@@ -461,33 +442,6 @@ class Tetris{
        
     }
 ////// end of update functions /////////
-
-////////. test functions
-    printBoard = ()=>{
-        let l = "";
-        for(x of this.board){
-            for(y of x)
-                l+=y;
-            console.log(l);
-            l="";
-        }
-    }
-
-    printPiece = (p)=>{
-        console.log("printing...")
-        let l = "";
-        for(let y=0; y<p.length; y++){
-            for(let x=0; x<p[y].length; x++)
-                l+=p[y][x];
-            console.log(l);
-            l="";
-        }
-    }
-
-    printCoords = (c)=>{
-        c.forEach((el)=>console.log(el))
-    }
-/////////////////////////////////
 
     stopAnimation = ()=>{
         window.cancelAnimationFrame(this.rAF);

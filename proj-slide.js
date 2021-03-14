@@ -65,8 +65,9 @@ class SlidePuzzle{
         this.last_cell.attr("data-xy", attr);
         
         // coercing the values into integer to avoid string concatenation.
-        let x = +attr.split(",")[0];
-        let y = +attr.split(",")[1];
+        let [x, y] = [attr.split(",")];
+        // let x = +attr.split(",")[0];
+        // let y = +attr.split(",")[1];
         this.last_cell.css({"top":y * this.size, "left":x * this.size});
         
         attr = cell.attr("data-xy");

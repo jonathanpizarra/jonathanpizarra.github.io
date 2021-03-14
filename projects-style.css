@@ -30,8 +30,11 @@
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 .row .col3,.row  .col6,.row  .col9{
     border-right: none;
@@ -41,7 +44,7 @@
 }
 
 .row .col:hover{
-    background-color: rgba(158, 163, 176, 0.8);
+    background-color: rgba(158, 163, 176, 0.9);
 }
 
 #projects-bg{
@@ -52,6 +55,8 @@
     min-height: 200px;
     /* background-color:teal; */
     z-index: 500;
+    /* transform: scale(1.5);
+    transition: transform 0.5s; */
 }
 
 #projects-bg canvas{
@@ -63,6 +68,15 @@
 #proj-particles{
     width:100%;
     height:100vh;
+    transform: scale(1.4);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+#projects-bg .scale-effect{
+    transform: scale(1.0);
+    opacity:1;
+
 }
 
 #proj-circular{
@@ -153,9 +167,12 @@
 }
 
 #tetris-canv{
-    height:100%;
-    margin:auto;
+    height:80%;
+    margin:10% auto;
     display: flex;
+    opacity:0;
+    transform: scale(1.4);
+    transition: transform 0.5s, opacity 0.5s;
 }
 
 .nav .nav-item.unselectable.dark{
@@ -313,6 +330,9 @@
     display: flex;
     width: 100%;
     height: 100%;
+    opacity:0;
+    transform: scale(1.4);
+    transition: transform 0.5s, opacity 0.5s;
 }
 
 #slide-puzzle-table{
@@ -324,3 +344,124 @@
     border:2px solid var(--dark);
     border-radius: 3px;
 }
+
+
+/*====================================*/
+
+.proj-title{
+    transform:scale(1.0);
+    margin-top:0;
+    transition: transform 0.5s, margin-top 0.5s;
+}
+
+.col:hover .proj-title{
+    transform: scale(1.2);
+    margin-top:-15px;
+    color:var(--dark);
+}
+
+
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    position: absolute;
+        bottom:-100px;
+    transition: bottom 0.5s;
+}
+
+.details-show{
+    bottom:20px;
+}
+
+.details p{
+    text-align: center;
+}
+
+.link{
+    margin-top:5px;
+}
+
+.link a{
+    text-decoration: none;
+    font-size: 14px;
+    color:var(--dark);
+    border:1px solid var(--dark);
+    padding:2px 5px;
+}
+
+.link a::after{
+    content: "▶";
+    color:var(--dark);
+    margin-left:5px;
+}
+
+.link a:hover{
+    color:var(--mid);
+    background-color: var(--dark);
+    border-color:var(--mid);
+}
+
+.link a:hover::after{
+    color:var(--mid);
+}
+
+.lang{
+    font-weight: 500;
+    font-size: 12px;
+    display: inline;
+    margin:2px auto;
+    padding:2px 5px;
+    background-color:var(--lessdark);
+}
+
+.lang-js{
+    border:1px solid var(--blue);
+    border-left:5px solid var(--blue); 
+    color:var(--blue);
+}
+
+.lang-js::before{
+    content:"❒";
+    color: var(--blue);
+    margin-right:5px;
+}
+
+.lang-canvas{
+    border:1px solid var(--green);
+    border-left:5px solid var(--green);
+    color:var(--green);
+}
+
+.lang-canvas::before{
+    content:"❒";
+    color: var(--green);
+    margin-right:5px;
+}
+
+.lang-jquery{
+    border:1px solid var(--red);
+    border-left:5px solid var(--red);
+    color:var(--red);
+}
+
+.lang-jquery::before{
+    content:"❒";
+    color: var(--red);
+    margin-right:5px;
+}
+
+.lang-cpp{
+    border:1px solid var(--pink);
+    border-left:5px solid var(--pink);
+    color:var(--pink);
+}
+
+.lang-cpp::before{
+    content:"❒";
+    color: var(--pink);
+    margin-right:5px;
+}
+
