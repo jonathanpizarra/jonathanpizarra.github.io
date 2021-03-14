@@ -33,12 +33,13 @@ class Minesweeper{
 
         // grid dimensions
         // edit these values if you want a bigger table. have fun.
-        this.h = 20;
-        this.w = 25;
+        this.h = 18;
+        this.w = 20;
         //mine count
         //these should always be equal
         this.b = this.flag = 20;
         this.tab.css({"width":(24*this.w)+"px", "height":(24*this.h)+"px"});
+        this.tab.css("margin-top", ((this.height - (24*this.h))/2) + "px" );// centering table vertically
 
         this.clicks = [Math.floor(this.w*this.h/2+this.w/2), 0, this.w, this.w*(this.h-1), this.w*this.h-1];
         this.index = 0;

@@ -35,6 +35,7 @@ init_tetris = ()=>{
     let start = true;
     p1.addEventListener('mouseenter', function(){
         projects_bg.innerHTML = "<canvas id='tetris-canv'></canvas>";
+        
         details[0].classList.add('details-show');
         //details[0].classList.remove("invisible-details");
         canv = document.getElementById('tetris-canv');
