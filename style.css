@@ -278,3 +278,23 @@ body{
 .nav .nav-contact-color .nav-item::before{
     background-color:var(--light);
 }
+
+/* ================================= */
+
+@media only screen and (max-width:600px){
+    body{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .block{
+        display: block;
+        position: relative;
+    }
+
+    #home, #about, #projects, #contact{
+        top:0;
+        left:0;
+    }
+}
+
