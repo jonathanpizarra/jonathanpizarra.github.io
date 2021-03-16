@@ -295,7 +295,7 @@ initialize = ()=>{
 
 }
 
-initialize();
+// initialize();
 
 window.onresize = function(){
     // clearInterval(field1.setInt);

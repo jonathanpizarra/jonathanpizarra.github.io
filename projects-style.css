@@ -26,7 +26,7 @@
 .row .col{
     border-right: 0.5px solid #FAE1DF77;
     border-bottom: 0.5px solid #FAE1DF77;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -51,8 +51,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    min-width: 400px;
-    min-height: 200px;
+    min-width: 40rem;
+    min-height: 20rem;
     /* background-color:teal; */
     z-index: 500;
     /* transform: scale(1.5);
@@ -92,14 +92,14 @@
 
 .prop-text{
     margin: auto;
-    font-size: 14px;
+    font-size: 1.4rem;
     background-color: var(--dark);
     color:yellowgreen;
     opacity: 0;
     transition: opacity 0.5s;
     position: relative;
     z-index: 500;
-    padding-top:20px;
+    padding-top:2rem;
     
 }
 
@@ -112,17 +112,17 @@
 
 #conway-stats{
     position:absolute;
-    bottom:10px;
-    right:50px;
+    bottom:1rem;
+    right:5rem;
     font-family: monospace;
-    font-size: 16px;
+    font-size: 1.6rem;
     color:var(--dark);
     z-index: 500;
 }
 
 #pip-container{
-    width:700px;
-    height:500px;
+    width:70rem;
+    height:50rem;
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -136,9 +136,9 @@
     height:100%;
     position: absolute;
         top:0;
-        left:-92px;
-    clip-path: inset(1px 105px 1px 92px);
-    clip-path: inset(1px 120px 1px 107px);
+        left:-9.2rem;
+    clip-path: inset(0.1rem 10.5rem 0.1rem 9.2rem);
+    clip-path: inset(0.1rem 12rem 0.1rem 10.7rem);
 
 }
 
@@ -161,7 +161,7 @@
 
 #tetris-canv{
     height: 80vh;
-    min-height: 300px;
+    min-height: 30rem;
     margin:10vh auto;
     display: flex;
     justify-content: center;
@@ -192,8 +192,8 @@
     min-height:100%;
     */
 
-    margin:50px auto;
-    border:1px solid #779;
+    margin:5rem auto;
+    border:0.1rem solid #779;
     width:100%;
     height:100%;
 
@@ -246,7 +246,7 @@
 
 
 .d{
-    font-size:18px;
+    font-size:1.8rem;
     font-family: Play;
     padding:0;
     display: flex;
@@ -257,7 +257,7 @@
     border:0.2rem solid #777;
     background:#686868;
     color:transparent;
-    font-size:18px;
+    font-size:1.8rem;
     font-family: Play;
     padding:0;
     display: flex;
@@ -292,7 +292,7 @@
 }
 
 .red{
-    font-size:15px;
+    font-size:1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;     
@@ -359,7 +359,7 @@
 
 .col:hover .proj-title{
     transform: scale(1.2);
-    margin-top:-15px;
+    margin-top:-1.5rem;
     color:var(--dark);
 }
 
@@ -371,12 +371,12 @@
     justify-content: center;
     width:100%;
     position: absolute;
-        bottom:-100px;
+        bottom:-10rem;
     transition: bottom 0.5s;
 }
 
 .details-show{
-    bottom:20px;
+    bottom:2rem;
 }
 
 .details p{
@@ -384,21 +384,21 @@
 }
 
 .link{
-    margin-top:5px;
+    margin-top:0.5rem;
 }
 
 .link a{
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1.4rem;
     color:var(--dark);
     border:1px solid var(--dark);
-    padding:2px 5px;
+    padding:0.2rem 0.5rem;
 }
 
 .link a::after{
     content: "▶";
     color:var(--dark);
-    margin-left:5px;
+    margin-left:0.5rem;
 }
 
 .link a:hover{
@@ -413,7 +413,7 @@
 
 .lang{
     font-weight: 500;
-    font-size: 12px;
+    font-size: 1.2rem;
     display: inline;
     margin:2px auto;
     padding:2px 5px;
@@ -468,7 +468,6 @@
     margin-right:5px;
 }
 
-
 /* =================================== */
 
 @media only screen and (max-width:600px){
@@ -477,4 +476,5 @@
         transform: scale(0.75);
         opacity:1;
     }
+
 }
