@@ -19,9 +19,6 @@ const init_btns = ()=>{
         about_btn.classList.remove('nav-underline-100');
         projects_btn.classList.remove('nav-underline-100');
         contact_btn.classList.remove('nav-underline-100');
-        
-        
-        
 
         switch(clicked_nav_item){
             case 0:
@@ -39,6 +36,9 @@ const init_btns = ()=>{
                 document.querySelector('#contact').style.left = "100vw";
                 break;
         }
+
+        show_name();
+        show_home_animation();
 
 
         clicked_nav_item = 0;
