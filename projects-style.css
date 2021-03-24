@@ -35,6 +35,9 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: transform 1.4s, opacity 1s;
 }
 .row .col3,.row  .col6,.row  .col9{
     border-right: none;
@@ -46,6 +49,12 @@
 .row .col:hover{
     background-color: rgba(158, 163, 176, 0.9);
 }
+
+.col.show{
+    opacity: 1;
+    transform: scale(1.0);
+}
+
 
 #projects-bg{
     position: absolute;
@@ -392,6 +401,7 @@
     font-size: 1.4rem;
     color:var(--dark);
     border:1px solid var(--dark);
+    border-left-width: 5px;
     padding:0.2rem 0.5rem;
 }
 

@@ -127,6 +127,7 @@ init_particles = ()=>{
 
     p3.addEventListener('mouseenter', function(){
         projects_bg.innerHTML = "<canvas id='proj-particles'></canvas>";
+        projects_bg.style.backgroundColor = "#0d1f2d";
         canv = document.getElementById('proj-particles');
         details[2].classList.add('details-show');
         

@@ -30,11 +30,11 @@ body{
     height: 100vh;
     overflow: hidden;
 }
-
+/* #################################################################### */
 #site{
     position:fixed;
         top:20px;
-        left:20px;
+        left:120px;
     color:red;
     font-size: 1.2rem;
     font-weight: 600;
@@ -50,6 +50,54 @@ body{
     -o-user-select: none;
     user-select: none;
 }
+/* ======================================== */
+#mode-lines{
+    position: fixed;
+        top:4rem;
+        left:2rem;
+    width:3rem;
+    height:0.2rem;
+    background-color: var(--dark);
+    z-index: 50000;
+    opacity: 0;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+    transition: transform 1s, opacity 1s;
+}
+
+#mode-lines::before{
+    content: ".";
+    color: transparent;
+    position: absolute;
+        top:1rem;
+        left:0;
+    width:3rem;
+    height:0.2rem;
+    background-color: var(--dark);
+}
+
+#mode-lines::after{
+    content: ".";
+    color: transparent;
+    position: absolute;
+        top:2rem;
+        left:0;
+    width:3rem;
+    height:0.2rem;
+    background-color: var(--dark);
+}
+
+#mode-lines.vertical{
+    opacity: 1;
+    transform: rotate(-90deg);
+}
+
+#mode-lines.horizontal{
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* ==================================== */
 
 .block{
     min-height: 40rem;
@@ -288,8 +336,13 @@ body{
     /* width:600px; */
     margin-top: 2.5rem;
     position: fixed;
-    right: 0;
+    right: -100%;
     z-index: 1500;
+    transition: right 1s;
+}
+
+.nav.show-nav{
+    right:0;
 }
 
 .nav li{
@@ -400,6 +453,7 @@ body{
     top:100vh;
     left:100vw;
     transition: left 1s, top 1s;
+    z-index: 600;
 }
 
 .title{
@@ -435,7 +489,8 @@ body{
 }
 
 .nav .nav-about-color .nav-item{
-    color:var(--dark);
+    /* color:var(--dark); */
+    color:var(--light);
     font-weight: 500;
 }
 
@@ -445,7 +500,8 @@ body{
 }
 
 .nav .nav-contact-color .nav-item{
-    color:var(--light);
+    /* color:var(--light); */
+    color: var(--dark);
 }
 
 .nav .nav-home-color .nav-item::before{
@@ -453,7 +509,8 @@ body{
 }
 
 .nav .nav-about-color .nav-item::before{
-    background-color:var(--dark);
+    /* background-color:var(--dark); */
+    background-color: var(--light);
 }
 
 .nav .nav-projects-color .nav-item::before{
@@ -461,7 +518,8 @@ body{
 }
 
 .nav .nav-contact-color .nav-item::before{
-    background-color:var(--light);
+    /* background-color:var(--light); */
+    background-color: var(--dark);
 }
 
 /* ================================= */

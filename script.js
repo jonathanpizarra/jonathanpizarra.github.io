@@ -30,6 +30,7 @@ const init_btns = ()=>{
                 break;
             case 2:
                 document.querySelector('#projects').style.top = "100vh";
+                hide_projects();
                 break;
             case 3:
                 document.querySelector('#contact').style.top = "100vh";
@@ -64,6 +65,7 @@ const init_btns = ()=>{
                 break;
             case 2:
                 document.querySelector('#projects').style.top = "100vh";
+                hide_projects();
                 break;
             case 3:
                 document.querySelector('#contact').style.top = "100vh";
@@ -103,7 +105,7 @@ const init_btns = ()=>{
         }
 
         document.querySelector("#projects").style.top = "0";
-
+        show_projects();
         clicked_nav_item = 2;
     })
 
@@ -128,6 +130,7 @@ const init_btns = ()=>{
                 break;
             case 2:
                 document.querySelector('#projects').style.top = "100vh";
+                hide_projects();
                 break;
             case 3:
                 break;
@@ -159,6 +162,26 @@ which_button_was_clicked = (b)=>{
 //         })(s);
 //     }
 // }
+
+show_projects = ()=>{
+    let projs = document.querySelectorAll('.col');
+
+    for(let x=0; x<projs.length; x++){
+        ((x)=>{
+            setTimeout(() => {
+                projs[x].classList.add("show");
+            }, 100);
+        })(x)
+    }
+}
+
+hide_projects = ()=>{
+    let projs = document.querySelectorAll('.col');
+
+    for(let x=0; x<projs.length; x++){
+        projs[x].classList.remove("show");
+    }
+}
 
 show_name = ()=>{
     let names = document.querySelectorAll('.name');
@@ -238,9 +261,38 @@ show_home_animation = ()=>{
     }
 }
 
+show_nav = ()=>{
+    document.querySelector('.nav').classList.add('show-nav');
+}
+
+layout_vertical = ()=>{
+    document.querySelector('#mode').classList.add('vertical');
+    document.querySelector('#mode').classList.remove('horizontal');
+}
+
+layout_horizontal = ()=>{
+    document.querySelector('#mode').classList.add('horizontal');
+    document.querySelector('#mode').classList.remove('vertical');
+}
+
+init_mode = ()=>{
+    mode = document.querySelector("#mode");
+    mode.addEventListener('click', function(){
+        if(mode.classList.contains('vertical')){
+            layout_horizontal();
+        }else if(mode.classList.contains('horizontal')){
+            layout_vertical();
+        }
+        console.log('shit...')
+    });
+}
 
 window.onload = function(){
     init_btns();
     show_home_animation();
     show_name();
+    show_nav();
+    layout_vertical();
+    init_mode();
+
 }
