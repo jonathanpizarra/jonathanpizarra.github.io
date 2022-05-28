@@ -168,9 +168,9 @@ body{
 }
 
 .desc.frame{
-    max-width: 60rem;
-    min-width: 60rem;
-    width: 60rem;
+    max-width: 55rem;
+    min-width: 55rem;
+    width: 55rem;
     height:22rem;
     margin-left:0;
     position: absolute;

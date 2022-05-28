@@ -74,6 +74,7 @@ const init_btns = ()=>{
         }
 
         document.querySelector("#about").style.left = "0";
+        document.querySelector("#skill-stats").style.width = "20rem";
 
         clicked_nav_item = 1;
     })
