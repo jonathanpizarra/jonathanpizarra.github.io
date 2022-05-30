@@ -7,9 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="projects-style.css">
-    <link rel="stylesheet" href="about-style.css">
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/info-style.css">
+
+    <!-- <link rel="stylesheet" href="projects-style.css">
+    <link rel="stylesheet" href="about-style.css"> -->
     <script
   src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
@@ -18,19 +20,117 @@
 </head>
 <body>
 
-    <div id="site"> SITE UNDER CONSTRUCTION</div>
+    <!-- <div id="site"> SITE UNDER CONSTRUCTION</div> -->
 
-    <div id="mode" class="unselectable"><div id="mode-lines"></div></div>
+    <!-- <div id="mode" class="unselectable"><div id="mode-lines"></div></div> -->
 
-    <ul class="nav">
+    <!-- <ul class="nav">
         <li><a class='nav-item nav-home nav-underline-100 unselectable' href="javascript:;">Home</a></li>
         <li><a class='nav-item nav-about unselectable' href="javascript:;">About</a></li>
         <li><a class='nav-item nav-projects unselectable' href="javascript:;">Projects</a></li>
         <li><a class='nav-item nav-contact unselectable' href="javascript:;">Contact</a></li>
-    </ul>
+    </ul> -->
+
+    <div class="container">
+        <div class="block loading" id="loader">
+
+        </div>
+
+        <div class="block loading" id="connect">  
+            <button class="nav-item nav-item-hidden" id="connect-btn" > 
+                <span class="nav-item-line"></span> 
+                <span class="nav-item-text">Connect</span> 
+            </button>
+            <div class="content connect-content content-hidden">
+                <p>connect content</p>
+            </div>
+        </div>
+
+        <div class="block loading" id="projects">  
+            <button class="nav-item nav-item-hidden" id="projects-btn" > 
+                <span class="nav-item-line"></span> 
+                <span class="nav-item-text">Projects</span> 
+            </button>
+            <div class="content projects-content content-hidden">
+                <p>projects content</p>
+            </div>
+        </div>
+
+        <div class="block loading block-active" id="info">  
+            <button class="nav-item nav-item-hidden" id="info-btn" > 
+                <span class="nav-item-line"></span> 
+                <span class="nav-item-text">Info</span> 
+            </button>
+            <div class="content info-content ">
+                <div class="info-container">
+                    <div class="info-box">
+                        <div class="info-text">
+                            <p>Hi!</p>
+                            <p>I'm Jonathan Pizarra</p>
+                            <p>Self-taught developer.</p>
+                            <p>Critical thinker.</p>
+                            <p>Loves learning new stuff</p>
+                            <p>Plant lover.</p>
+                            <p>Casual gamer.</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="skills-container">
+
+                    </div>
+                    
+
+                </div>
+
+                
+
+            </div>
+        </div>
+
+        <div class="block loading" id="home">  
+            <button class="nav-item nav-item-hidden" id="home-btn" > 
+                <span class="nav-item-line"></span> 
+                <span class="nav-item-text">Home</span> 
+            </button>
+            <div class="content home-content content-hidden">
+                <div class="name-container" id="name-container-home">
+
+                    <div class="name-box">
+                        <div class="name-box-texts" >
+                            <div>JON</div>
+                            <div>ATH</div>
+                            <div>ANP</div>
+                            <div>IZA</div>
+                            <div>RRA</div>
+                        </div>
+                    </div>
+
+                    <div class="name-bar">
+                        <div class="name-bar-texts">
+                            <div>JON</div>
+                            <div>ATH</div>
+                            <div>ANP</div>
+                            <div>IZA</div>
+                            <div>RRA</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="home-web-developer">
+                    <div class="web-dev-circle"></div>
+                    <div class="web-dev-text">Web Developer</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
     
-    <div class="block" id="home">
-        <!-- <canvas id="particles"></canvas>        -->
+     
+    <!-- <div class="block" id="home">
+
+        
         <div class="space top">
             <p class="desc name unselectable">Jonathan Pizarra</p>
             <p class="desc web unselectable">Web & App Dev by degree</p>
@@ -59,9 +159,14 @@
             <p class="desc frame construction">Site Under Construction</p>
         </div>
         
-    </div>
+    
+    
+    </div>  -->
 
-    <div class="block" id="about">
+
+    <!-- <div class="block" id="about">
+
+
         <canvas id="particles2"></canvas>
         <div id="skill-stats">
             <ul id="skills">
@@ -96,9 +201,14 @@
             </div>
         </div>
         
-    </div>
 
-    <div class="block" id="projects">
+    </div> -->
+
+
+    <!-- <div class="block" id="projects">
+
+
+        
         <div id="projects-bg"></div>
         <table id="projects-container">
             <tbody>
@@ -184,14 +294,19 @@
             </tbody>
         </table>
 
-    </div>
+    
+    </div> -->
 
-    <div class="block" id="contact">
-        <!-- <h2 class="title">SITE UNDER CONSTRUCTION</h2> -->
+
+    <!--  <div class="block" id="contact">
+
+        <h2 class="title">SITE UNDER CONSTRUCTION</h2>
 
         
-    </div>
+    </div> -->
 
+
+    <!-- 
     <script src="proj-tetris.js"></script>
 
     <script src="proj-slide.js"></script>
@@ -206,11 +321,12 @@
 
     <script src="proj-conway.js"></script>
 
-    <script src="proj-minesweeper.js"></script>
+    <script src="proj-minesweeper.js"></script> -->
 
-    <script src="script.js"></script>
+    <script src="./js/main-script.js"></script>
+    <script src="./js/info-script.js"></script>
 
-    <script src="project-script.js"></script>
+    <!-- <script src="project-script.js"></script> -->
 
     
 </body>
