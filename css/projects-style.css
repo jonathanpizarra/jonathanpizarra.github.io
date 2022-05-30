@@ -1,0 +1,10 @@
+
+.projects-content{
+    padding: 1rem;
+    border: 1px solid red;
+}
+
+.project{
+    border: 1px solid var(--dark);
+    height: 12rem;
+}

@@ -22,6 +22,10 @@
 
 }
 
+html, body{
+    background-color: var(--white);
+}
+
 body{
     height: 100vh;
 
@@ -69,6 +73,15 @@ body{
     letter-spacing: 3px;
 }
 
+.blur{
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    top: 30px;
+    z-index: 2;
+    /* background-color: red; */
+}
+
 #connect-btn{
     transition-delay: 1s;
 }
@@ -113,6 +126,7 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .block-active{
@@ -333,6 +347,9 @@ div.loading{
     letter-spacing: 0.75rem;
     color: var(--light);
 }
+
+
+
 
 
 

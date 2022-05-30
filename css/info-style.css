@@ -3,16 +3,24 @@
 
 .info-content{
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.info-blur{
+    background: linear-gradient(var(--gray), rgba(255,255,255,0));
 }
 
 .info-container{
     margin: 1rem;
     position: relative;
+    height: 32rem;
+    min-height: 32rem;
     /* border: 1px solid var(--mid); */
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 .info-box{
@@ -29,15 +37,31 @@
     transition: width 0.75s ease-in-out 0.25s;
 }
 
+.info-highlight{
+    font-weight: 700;
+}
+
+/* .info-my-name{
+    text-decoration: underline;
+} */
+
 .info-text{
-    color: var(--light);
-    font-size: 1.5rem;
+    
     min-width: 300px;
     flex-grow: 1;
-    padding: 1rem;
+    padding: 2.5rem;
     position: absolute;
     right:0;
 }
+
+.info-text p{
+    color: var(--light);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.25rem;
+    margin: 1rem 0;
+}
+
 
 
 .block-active .info-box{
@@ -46,6 +70,135 @@
 
 /* ==============skills  =================== */
 .skills-container{
-    height: 100%;
-    flex-grow: 1;
+
+    height: 32rem;
+    min-height: 32rem;
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.info-circle{
+    background-color: var(--light);
+    width: 0.5rem;
+    height: 0.5rem;
+    min-height: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.info-title-text{
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.75rem;
+    color: var(--light);
+    padding-left: 0.75rem;
+}
+
+/* ================ skill =================== */
+
+.skills-content{
+    margin: 2rem auto;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skill{
+    position: relative;
+    border: 1px solid var(--light);
+    height: 2rem;
+    width: 14rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.25rem;
+    margin: 0.5rem 0;
+}
+
+.skill-name{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding-left: 1rem;
+    white-space: nowrap;
+}
+
+.skill-name1{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: var(--light);
+    color: var(--gray);
+    overflow-x: hidden;
+}
+
+.skill-name2{
+    color: var(--light);
+}
+
+.skill-specific{
+    border: 1px solid var(--mid) !important;
+}
+
+.skill-name3{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: var(--mid);
+    color: var(--gray);
+    overflow-x: hidden;
+}
+
+.skill-name4{
+    color: var(--mid);
+}
+
+.skill-name-js{
+    width: 85%;
+}
+
+.skill-name-php{
+    width: 55%;
+}
+
+.skill-name-csharp{
+    width: 40%;
+}
+
+.skill-name-java{
+    width: 65%;
+}
+
+.skill-name-cpp{
+    width: 30%;
+}
+
+.skill-name-python{
+    width: 40%;
+}
+
+.skill-name-sql{
+    width: 60%;
+}
+
+
+.skill-name-react{
+    width: 60%;
+}
+
+.skill-name-express{
+    width: 75%;
+}
+
+.skill-name-android{
+    width: 70%;
+}
+
+.skill-name-firebase{
+    width: 40%;
+}
+
