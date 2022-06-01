@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="author" content="Jonathan Pizarra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9f6bb76486.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main-style.css">
     <link rel="stylesheet" href="./css/info-style.css">
     <link rel="stylesheet" href="./css/projects-style.css">
+    <link rel="stylesheet" href="./css/connect-style.css">
 
 
     <!-- <link rel="stylesheet" href="projects-style.css">
     <link rel="stylesheet" href="about-style.css"> -->
-    <script
+    <!-- <script
   src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <title>Jonathan Pizarra</title>
 </head>
 <body>
@@ -41,34 +46,137 @@
         <div class="block loading" id="connect">  
             <button class="nav-item nav-item-hidden" id="connect-btn" > 
                 <span class="nav-item-line"></span> 
-                <span class="nav-item-text">Connect</span> 
+                <span class="nav-item-text">CONNECT</span> 
             </button>
             <div class="content connect-content content-hidden">
-                <p>connect content</p>
+
+                <div class="connect-box">
+                    <div class="connect-main-text">Let's Connect!</div>
+
+                    <div class="circle dark-circle"></div>
+    
+                    <div class="connect-item connect-email">
+                        <div class="connect-icon email-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="connect-texts email">
+                            <div class="connect-text connect-text1 email-text1"><span>atanpizarra@gmail.com</span></div>
+                            <div class="connect-text connect-text2 email-text2"><span>atanpizarra@gmail.com</span></div>
+                        </div>
+                    </div>
+    
+                    <div class="circle gray-circle"></div>
+    
+                    <a href="https://github.com/jonathanpizarra" target="_blank" class="connect-item connect-github">
+                        <div class="connect-icon github-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="connect-texts github">
+                            <div class="connect-text connect-text1 github-text1"><span>Github</span></div>
+                            <div class="connect-text connect-text2 github-text2"><span>Github</span></div>
+                        </div>
+                    </a>
+    
+                    <div class="circle mid-circle"></div>
+    
+                    <a href="https://www.linkedin.com/in/jonathanpizarra/" target="_blank" class="connect-item connect-linkedin">
+                        <div class="connect-icon linkedin-icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <div class="connect-texts linkedin">
+                            <div class="connect-text connect-text1 linkedin-text1"><span>LinkedIn</span></div>
+                            <div class="connect-text connect-text2 linkedin-text2"><span>LinkedIn</span></div>
+                        </div>
+                    </a>
+                </div>
+
+                
+
             </div>
         </div>
 
         <div class="block loading" id="projects">  
             <button class="nav-item nav-item-hidden" id="projects-btn" > 
                 <span class="nav-item-line"></span> 
-                <span class="nav-item-text">Projects</span> 
+                <span class="nav-item-text">PROJECTS</span> 
             </button>
             <div class="content projects-content content-hidden">
                 <div class="project project1">
+                    <div class="project-images project1-images">
+                        <img src="./images/pokedex/pokedex2.png" alt="pokedex sample">
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">Pokédex Web App</div>
+                        <div class="tech-items">
+                            <div class="tech-item">ReactJS</div>
+                            <div class="tech-item">Pokémon API</div>
+                        </div>
+                        <div class="project-description">
+                            A Pokémon Web App that shows the main stats of each Pokémon using the free Pokémon API
+                        </div>
+
+                        <a href="https://jonathanpizarra.github.io/pokedex-app/" target="_blank" class="project-link">
+                            <div class="project-link-text project-link-text1" ><span>Check it out ►</span></div>
+                            <div class="project-link-text project-link-text2" ><span>Check it out ►</span></div>
+                        </a>
+                    </div>
 
                 </div>
 
+                <div class="circle projects-circle"></div>
+
                 <div class="project project2">
-                    
+                    <div class="project-images project2-images">
+                        <img src="./images/evaluator/evaluator2.png" alt="proposition evaluator sample">
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">Proposition Evaluator</div>
+                        <div class="tech-items">
+                            <div class="tech-item">C++</div>
+                            <div class="tech-item">CLI</div>
+                        </div>
+                        <div class="project-description">
+                            A command-line application that evaluates propositional logic expressions and displays the truth table and result.
+                        </div>
+
+                        <a href="https://github.com/jonathanpizarra/Proposition-Evaluator" target="_blank" class="project-link">
+                            <div class="project-link-text project-link-text1" ><span>Fork in Github ►</span></div>
+                            <div class="project-link-text project-link-text2" ><span>Fork in Github ►</span></div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="circle projects-circle"></div>
+
+                <div class="project project3">
+                    <div class="project-images project3-images">
+                        <img src="./images/minesweeper/minesweeper2.png" alt="minesweeper sample">
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">Minesweeper</div>
+                        <div class="tech-items">
+                            <div class="tech-item">jQuery</div>
+                        </div>
+                        <div class="project-description">
+                            An implementation of the classic minesweeper game utilizing jQuery
+                        </div>
+
+                        <a href="https://code.sololearn.com/WY7D7egT4qM1" class="project-link">
+                            <div class="project-link-text project-link-text1" ><span>Check it out ►</span></div>
+                            <div class="project-link-text project-link-text2" ><span>Check it out ►</span></div>
+                        </a>
+                    </div>
+
                 </div>
 
             </div>
         </div>
 
-        <div class="block loading block-active" id="info">  
+        <div class="block loading" id="info">  
             <button class="nav-item nav-item-hidden" id="info-btn" > 
                 <span class="nav-item-line"></span> 
-                <span class="nav-item-text">Info</span> 
+                <span class="nav-item-text">INFO</span> 
             </button>
             <div class="blur info-blur"></div>
             <div class="content info-content ">
@@ -77,11 +185,11 @@
                         <div class="info-text">
                             <p>Hi!</p>
                             <p>I'm <span class="info-highlight info-my-name">Jonathan Pizarra</span></p>
-                            <p>Self-taught <span class="info-highlight">developer</span> .</p>
-                            <p>Loves <span class="info-highlight">learning</span> new stuff</p>
-                            <p>Critical <span class="info-highlight">thinker</span> .</p>
+                            <p>Web and Mobile <span class="info-highlight">developer</span>.</p>
+                            <p>Loves <span class="info-highlight">learning</span> new stuff.</p>
+                            <p>Critical <span class="info-highlight">thinker</span>.</p>
                             <p> <span class="info-highlight">Puzzle</span> lover.</p>
-                            <p>Casual <span class="info-highlight">gamer</span>.</p>
+                            <p>Problem <span class="info-highlight">solver</span>.</p>
                         </div>
                         
                     </div>
@@ -89,8 +197,9 @@
                 </div>
 
                 <div class="skills-container">
-                    <div class="info-circle"></div>
+                    <div class="circle info-circle"></div>
                     <div class="info-title-text">SKILLS</div>
+                    <div class="circle info-circle"></div>
 
                     <div class="skills-content">
                         <div class="skill skill-js">
@@ -128,7 +237,7 @@
                             <div class="skill-name skill-name2">SQL</div>
                         </div>
 
-                        <div class="info-circle"></div>
+                        <div class="circle info-circle"></div>
 
                         <div class="skill skill-specific skill-react">
                             <div class="skill-name skill-name3 skill-name-react">ReactJS</div>
@@ -150,6 +259,11 @@
                             <div class="skill-name skill-name4 ">Firebase</div>
                         </div>
 
+                        <div class="skill skill-specific skill-django">
+                            <div class="skill-name skill-name3 skill-name-django">Django</div>
+                            <div class="skill-name skill-name4 ">Django</div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -157,12 +271,12 @@
             </div>
         </div>
 
-        <div class="block loading" id="home">  
+        <div class="block loading home-show" id="home">  
             <button class="nav-item nav-item-hidden" id="home-btn" > 
                 <span class="nav-item-line"></span> 
-                <span class="nav-item-text">Home</span> 
+                <span class="nav-item-text">HOME</span> 
             </button>
-            <div class="content home-content content-hidden">
+            <div class="content home-content">
                 <div class="name-container" id="name-container-home">
 
                     <div class="name-box">
@@ -175,7 +289,7 @@
                         </div>
                     </div>
 
-                    <div class="name-bar">
+                    <div class="name-bar name-bar-intro">
                         <div class="name-bar-texts">
                             <div>JON</div>
                             <div>ATH</div>
@@ -188,7 +302,7 @@
                 </div>
 
                 <div class="home-web-developer">
-                    <div class="web-dev-circle"></div>
+                    <div class="circle web-dev-circle"></div>
                     <div class="web-dev-text">Web Developer</div>
                 </div>
             </div>
@@ -388,12 +502,14 @@
 
     <script src="proj-proposition.js"></script>
 
-    <script src="proj-conway.js"></script>
+    <script src="proj-conway.js"></script> -->
 
-    <script src="proj-minesweeper.js"></script> -->
+    <script src="proj-minesweeper.js"></script> 
 
     <script src="./js/main-script.js"></script>
     <script src="./js/info-script.js"></script>
+    <script src="./js/projects-script.js"></script>
+
 
     <!-- <script src="project-script.js"></script> -->
 

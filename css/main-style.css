@@ -37,6 +37,7 @@ body{
     height: 100%;
     position: relative;
     overflow: hidden;
+    
 }
 
 /* nav buttons */
@@ -71,6 +72,11 @@ body{
 
 .nav-item-text{
     letter-spacing: 3px;
+    transition: letter-spacing 0.5s ease-in-out;
+}
+
+.block-active .nav-item-text{
+    letter-spacing: 6px;
 }
 
 .blur{
@@ -177,6 +183,10 @@ body{
         flex-grow 0.5s ease-in-out;
 }
 
+.home-show{
+    flex-grow: 1;
+}
+
 /* ========== content ================= */
 
 .content {
@@ -227,6 +237,12 @@ div.loading{
     height: 12rem;
     min-width: 10rem;
     min-height: 12rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.5s;
+}
+
+.block-active .name-container{
+    opacity: 1;
 }
 
 .name-box{
@@ -246,9 +262,13 @@ div.loading{
     width: 0.5;
     height: 100%;
     position: absolute;
+    
+    
+}
+
+.block-active .name-bar{
     animation: animate-name-backward 1.25s ease-in-out;
     animation-fill-mode: forwards;
-    
 }
 
 .name-bar-texts, .name-box-texts{
@@ -333,12 +353,22 @@ div.loading{
     align-items: center;
 }
 
-.web-dev-circle{
-    background-color: var(--light);
+.circle{
     width: 0.5rem;
     height: 0.5rem;
+    min-height: 0.5rem;
     border-radius: 0.5rem;
     margin: 1rem 0;
+}
+
+.web-dev-circle{
+    background-color: var(--light);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.75s;
+}
+
+.block-active .web-dev-circle{
+    opacity: 1;
 }
 
 .web-dev-text{
@@ -346,8 +376,13 @@ div.loading{
     font-weight: 300;
     letter-spacing: 0.75rem;
     color: var(--light);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.95s;
 }
 
+.block-active .web-dev-text{
+    opacity: 1;
+}
 
 
 

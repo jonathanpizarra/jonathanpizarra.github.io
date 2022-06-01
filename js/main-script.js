@@ -1,5 +1,6 @@
-
-let activeTab = "info"
+// ===============================
+let activeTab = "home"
+// ===============================
 
 $(function(){
     console.log("asf")
@@ -7,6 +8,9 @@ $(function(){
     const init = () =>{
         $(".block").removeClass("loading")
         $(".nav-item").removeClass("nav-item-hidden")
+        setTimeout(() => {
+            $("#home").addClass("block-active").removeClass("home-show")
+        }, 750);
         
     }
 
@@ -14,22 +18,9 @@ $(function(){
         
         $("#" + tab).removeClass("block-active")
 
-
-        // if(tab === 'home'){
-        //     $("#home").removeClass("block-active")
-        // }else if(tab === 'projects'){
-        //     $("#projects").removeClass("block-active")
-        // }else if(tab === 'info'){
-        //     $("#info").removeClass("block-active")
-        // }else if(tab === 'connect'){
-        //     $("#connect").removeClass("block-active")
-        // }
-        
     }
 
     const showActiveContent = (oldtab, newtab)=>{
-        
-        
 
         setTimeout(() => {
             $("." + oldtab + "-content").addClass('content-hidden')
@@ -48,6 +39,8 @@ $(function(){
         showActiveContent(activeTab, 'home')
 
         activeTab = "home"
+        $(".project").removeClass("project-show")
+
     }
 
     const infoButtonListener = ()=>{
@@ -59,6 +52,9 @@ $(function(){
         $("#info").addClass("block-active")
         showActiveContent(activeTab, 'info')
         activeTab = "info"
+
+        $(".project").removeClass("project-show")
+
     }
 
     const projectsButtonListener = ()=>{
@@ -72,6 +68,13 @@ $(function(){
 
         activeTab = "projects"
 
+        // ==============================================
+        $(".project").removeClass("project-show")
+        // console.log($(".projects-content"))
+
+        $(".projects-content").animate({scrollTop : 0})
+        $(".project1").addClass("project-show")
+
     }
 
     const connectButtonListener = ()=>{
@@ -84,6 +87,8 @@ $(function(){
         showActiveContent(activeTab, 'connect')
 
         activeTab = "connect"
+        $(".project").removeClass("project-show")
+
     }
 
 

@@ -1,0 +1,195 @@
+
+
+.connect-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.connect-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--white);
+    padding: 3rem;
+}
+
+.connect-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 15.5rem;
+    height: 2rem;
+    cursor: default;
+    text-decoration: none;
+    
+}
+
+.connect-main-text{
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.25rem;
+    color: var(--gray);
+}
+
+.connect-icon{
+    min-width: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+}
+
+.connect-texts{
+    position: relative;
+    height: 2rem;
+    width:13.5rem;
+    min-width: 13.5rem;
+    min-height: 100%;
+    flex-grow: 1;
+}
+
+.connect-text{
+    position: absolute;
+        top:0;
+        left:0;
+    width: 13.5rem;
+    height: 100%;
+}
+
+.connect-text span{
+    height: 2rem;
+    width: 13.5rem;
+    min-width: 13.5rem;
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.connect-text2{
+    overflow: hidden;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.connect-item:hover .connect-text2{
+    width: 100%;
+}
+
+.connect-github, .connect-linkedin{
+    cursor: pointer;
+}
+
+/* ============================== colors ========================= */
+.email-icon{
+    background-color: var(--mid);
+    border: 1px solid var(--mid);
+}
+
+.github-icon{
+    background-color: var(--gray);
+    border: 1px solid var(--gray);
+}
+
+.linkedin-icon{
+    background-color: var(--dark);
+    border: 1px solid var(--dark);
+}
+/*  */
+.email-text1, .email-text2{
+    border: 1px solid var(--mid);
+    border-left-color: var(--light);
+
+}
+
+.email-text1 {
+    color: var(--gray);
+}
+
+.email-text2{
+    color: var(--light);
+    background-color: var(--mid) ;
+}
+/*  */
+.github-text1, .github-text2{
+    border: 1px solid var(--gray);
+    border-left-color: var(--light);
+
+}
+
+.github-text1 {
+    color: var(--gray);
+}
+
+.github-text2{
+    color: var(--light);
+    background-color: var(--gray) ;
+}
+/*  */
+.linkedin-text1, .linkedin-text2{
+    border: 1px solid var(--dark);
+    border-left-color: var(--light);
+
+}
+
+.linkedin-text1 {
+    color: var(--gray);
+}
+
+.linkedin-text2{
+    color: var(--light);
+    background-color: var(--dark) ;
+}
+
+
+/* ========================= */
+.mid-circle{
+    background-color: var(--mid);
+}
+
+.gray-circle{
+    background-color: var(--gray);
+}
+
+.dark-circle{
+    background-color: var(--dark);
+}
+
+/* ======================= effects ================== */
+
+.connect-email{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.25s;
+}
+
+.connect-github{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.45s;
+}
+
+.connect-linkedin{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.65s;
+}
+
+.block-active .connect-email{
+    opacity: 1;
+}
+
+.block-active .connect-github{
+    opacity: 1;
+}
+
+.block-active .connect-linkedin{
+    opacity: 1;
+}
+
+
