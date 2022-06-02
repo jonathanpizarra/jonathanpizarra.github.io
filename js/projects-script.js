@@ -5,7 +5,7 @@ $(function(){
     // let viewportTop = null
     // let viewportBottom = null
     
-    $.fn.isInViewport = function() {
+    $.fn.isInProjectViewport = function() {
 
 
         let paddingTop = $(".projects-content").offset().top;
@@ -29,7 +29,7 @@ $(function(){
 
         for(p of projs){
 
-            if($(p).isInViewport()){
+            if($(p).isInProjectViewport()){
                 // console.log('is in vp', p)
                 if(!$(p).hasClass("project-show")){
                     $(p).addClass("project-show")

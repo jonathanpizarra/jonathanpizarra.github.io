@@ -35,12 +35,18 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     position: relative;
     overflow: hidden;
     
 }
 
 /* nav buttons */
+
+.btn-container{
+    height: 30px;
+    width: 100%;
+}
 
 .nav-item{
     /* border: 1px solid green; */
@@ -72,7 +78,8 @@ body{
 
 .nav-item-text{
     letter-spacing: 3px;
-    transition: letter-spacing 0.5s ease-in-out;
+    transition: letter-spacing 0.5s ease-in-out, 
+                font-weight 0.5s ease-in-out;
 }
 
 .block-active .nav-item-text{
@@ -119,8 +126,24 @@ body{
 #home-btn span{
     color: var(--mid);
 }
+/*  */
+#connect-btn .nav-item-line{
+    background-color: var(--gray);
+}
 
-/* ============= blocks ============== */
+#projects-btn .nav-item-line{
+    background-color: var(--dark);
+}
+
+#info-btn .nav-item-line{
+    background-color: var(--light);
+}
+
+#home-btn .nav-item-line{
+    background-color: var(--mid);
+}
+
+/* ============= blocks/tabs ============== */
 
 
 
@@ -142,7 +165,7 @@ body{
 }
 
 .block-active .nav-item-line{
-    width: 20px !important;
+    width: 30px !important;
 }
 
 #loader{
@@ -500,4 +523,117 @@ div.loading{
         left: 0;
         right: auto;
     }
+}
+
+
+/* ======================================== */
+
+@media screen and (min-width: 769px) {
+
+    .container{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .btn-container{
+        height: 100%;
+        width: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+        
+    #loader{
+        width: 0px;
+        min-width: 0px;
+        background-color: var(--white);
+        /* width: 100%; */
+        transition: width 1s ease-in-out 0.01s, 
+            min-width 1s ease-in-out 0.1s,
+            flex-grow 0.5s ease-in-out;
+    }
+
+    #connect{
+        background-color: var(--light);
+        transition: width 1s ease-in-out 0.1s, 
+            min-width 1s ease-in-out 0.1s,
+            flex-grow 0.5s ease-in-out;
+    }
+
+    #projects{
+        background-color: var(--mid);
+        transition: width 1s ease-in-out 0.25s , 
+            min-width 1s ease-in-out 0.25s,
+            flex-grow 0.5s ease-in-out;
+    }
+
+    #info{
+        background-color: var(--gray);
+        transition: width 1s ease-in-out 0.5s, 
+            min-width 1s ease-in-out 0.5s,
+            flex-grow 0.5s ease-in-out;
+    }
+
+    #home{
+        background-color: var(--dark);
+        transition: width 1s ease-in-out 0.75s, 
+            min-width 1s ease-in-out 0.75s,
+            flex-grow 0.5s ease-in-out;
+    }
+
+    .block{
+        width: 30px;
+        height: 100%;
+        min-width: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        
+    }
+
+    div.loading{
+        width: 100vw !important;
+        min-width: 100vw !important;
+        /* flex-grow: 1 !important; */
+        
+    }
+
+
+    .nav-item{
+        width: 30px;
+        /* height: 100%;
+        min-height: 100%; */
+        
+        transform: rotate(-90deg);
+        bottom:0;
+        transition : bottom 0.5s ease-in-out;
+    }
+
+    .nav-item-line{
+        width: 10px;
+        min-width: 10px;
+        height: 1px;
+        /* background-color: red; */
+        /* margin: 0.5rem 0; */
+        transition : min-width 0.5s ease-in-out, 
+                    height 0.5s ease-in-out;
+    }
+
+    .nav-item-text{
+        font-weight: 400;
+    }
+
+    .block-active .nav-item-text{
+        font-weight: 600;
+    }
+
+    .block-active .nav-item-line{
+        min-width: 30px !important;
+        height: 2px;
+    }
+
+    .nav-item-hidden{
+        bottom : -120px;
+    }
+
 }

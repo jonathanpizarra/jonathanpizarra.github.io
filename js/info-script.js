@@ -1,6 +1,8 @@
 $(function(){
 
-    $(".info-text").css({minWidth : $(".info-container").width() + "px"})
+    // $(".info-text").css({minWidth : $(".info-container").width() + "px"})
+    // $(".info-text").css({width : $(".info-container").width() + "px"})
+
 
     $.fn.isInInfoViewport = function() {
 

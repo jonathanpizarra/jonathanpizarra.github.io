@@ -5,6 +5,13 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;;
+    
+}
+
+.info-content::-webkit-scrollbar {
+    width: 0 !important;
 }
 
 .info-blur{
@@ -14,34 +21,36 @@
 .info-container{
     margin: 1rem;
     position: relative;
-    height: 90%;
+    /* height: 90%; */
+    height: 100%;
     min-height: 90%;
     /* border: 1px solid var(--mid); */
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     /* flex-grow: 1; */
 }
 
 .info-box{
-    width: 0.25rem;
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    border-left: 0.25rem solid var(--mid);
+    /* display: flex;
+    flex-direction: column; */
+    /* flex-grow: 1; */
+    border-right: 0.25rem solid var(--mid);
+    background-color: var(--gray);
     /* border-left-width: 0.5rem; */
     position: absolute;
-    right:0;
-    overflow: hidden;
-    transition: width 0.75s ease-in-out 0.25s,
-                opacity 0.2s ease;
-    opacity: 0;
+    top:0;
+    left:0;
+    /* overflow: hidden; */
+    transition: width 0.75s ease-in-out 0.25s;    
 }
 
-.block-active .info-box{
+.block-active .info-content{
     opacity: 1 !important;
 }
+
 
 .info-highlight{
     font-weight: 700;
@@ -53,11 +62,14 @@
 
 .info-text{
     
-    min-width: 300px;
-    flex-grow: 1;
+    /* min-width: 300px;
+    flex-grow: 1; */
+    width: 100%;
+    height: 100%;
     padding: 2.5rem;
     position: absolute;
     right:0;
+    left:0;
 }
 
 .info-text p{
@@ -67,12 +79,14 @@
     letter-spacing: 0.25rem;
     margin: 1rem 0;
     min-width: 100%;
+    cursor: default;
+    position: relative;
 }
 
 
 
 .block-active .info-box{
-    width: 100%;
+    width: 0;
 }
 
 /* ==============skills  =================== */
@@ -98,15 +112,45 @@
     padding-left: 0.75rem;
 }
 
+p.info-text-big{
+    font-size: 2rem;
+}
+
+p.light-color-text{
+    color:var(--light);
+}
+
+p.mid-color-text{
+    color: var(--mid);
+}
+
+p.dark-color-text{
+    color: var(--dark);
+}
+
+.sub{
+    display: none;
+}
+
 /* ================ skill =================== */
 
 .skills-content{
     margin: 2rem auto;
     padding-bottom: 5rem;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.skill-group{
+    display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1rem;
 }
+
 .skill{
     position: relative;
     border: 1px solid var(--light);
@@ -224,3 +268,51 @@
 .skill-show .skill-name-django{
     width: 50%;
 }
+
+/* ================ */
+
+@media screen and (min-width: 769px) {
+    p.info-text-big{
+        font-size: 3rem;
+    }
+
+    .info-container{
+        height: 90vh;
+        min-height: 90vh;
+    }
+
+    .info-text-span{
+        position: relative;
+    }
+
+    .sub{
+        display: inline;
+        white-space: nowrap;
+        /* position: absolute; */
+        /* left: 105%; */
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out;
+    }
+    
+    .info-text-p:hover .sub{
+        opacity: 1 !important;
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+    
+    .info-container{
+        height: 80vh;
+        min-height: 80vh;
+    }
+
+    .info-text p{
+        font-size: 1.5rem;
+    }
+
+    p.info-text-big{
+        font-size: 4rem;
+    }
+}
+
