@@ -97,14 +97,16 @@ $(function(){
         // $(".project1").addClass("project-show")
 
         let projs = $(".project")
+        let first = true
 
         for(p of projs){
 
-            if($(p).isInProjectViewport()){
+            if(first || $(p).isInProjectViewport()){
                 // console.log('is in vp', p)
                 if(!$(p).hasClass("project-show")){
                     $(p).addClass("project-show")
                     // console.log("has class now", p)
+                    first = false
                 }
             }else{
                 if($(p).hasClass("project-show")){

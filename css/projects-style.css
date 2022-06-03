@@ -19,7 +19,7 @@
 }
 
 .project{
-    border: 1px solid var(--gray);
+    border: 1px solid var(--light);
     border-left-width: 0.25rem;
     /* height: 12rem; */
     padding: 1rem 0.5rem;
@@ -32,7 +32,7 @@
     justify-content: space-evenly;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-
+    position: relative;
 }
 
 .project-show{
@@ -40,8 +40,8 @@
 }
 
 .project-images{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     border: 0.5rem solid var(--light);
     /* border-left-width: 0.5rem; */
     transition: all 0.5s ease-in-out;
@@ -120,11 +120,13 @@
     /* border: 1px solid var(--gray); */
     padding: 1rem;
     font-size: 1.1rem;
+    font-weight: 500;
     text-align: center;
     line-height: 1.5rem;
     color: var(--dark);
     opacity: 0;
-    transition: opacity 0.5s ease-in-out 0.85s;
+    transition: opacity 0.5s ease-in-out 0.85s,
+                font-weight 0.25s ease-in-out;
 }
 
 .project-show .project-description{
@@ -178,7 +180,23 @@
     font-weight: 600;
     border: 1px solid var(--gray);
     padding: 0.2rem 0;
+    background-color: var(--mid);
 
+}
+
+.project-image-container, .project-details{
+    z-index: 2;
+}
+
+.project-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
@@ -190,6 +208,42 @@
     .project-details{
         padding:0 2rem;
         flex-grow: 1;
+    }
+
+    .project-images{
+        
+        box-shadow: 1px 1px 1px var(--gray);
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out 0.1s,
+            transform 0.25s ease-in-out,
+            box-shadow 0.25s ease-in-out;
+    }
+
+    .project-images:hover {
+        transform: scale(1.02, 1.02);
+        box-shadow: 1px 1px 4px var(--gray);
+    }
+
+
+
+    .project1-overlay{
+        background-image: url("../images/pokedex/pokedex1.png");
+    }
+
+    .project2-overlay{
+        background-image: url("../images/evaluator/evaluator1.png");
+    }
+
+    .project3-overlay{
+        background-image: url("../images/minesweeper/minesweeper4.png");
+    }
+
+    .project-image-container:hover ~ .project-overlay{
+        opacity: 0.2;
+    }
+
+    .project-image-container:hover ~ .project-details>.project-description{
+        font-weight: 600;
     }
 
 

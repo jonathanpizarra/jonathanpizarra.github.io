@@ -112,7 +112,7 @@ body{
 }
 
 #connect-btn span{
-    color: var(--gray);
+    color: var(--dark);
 }
 
 #projects-btn span{
@@ -610,8 +610,8 @@ div.loading{
     }
 
     .nav-item-line{
-        width: 10px;
-        min-width: 10px;
+        width: 20px;
+        min-width: 20px;
         height: 1px;
         /* background-color: red; */
         /* margin: 0.5rem 0; */
@@ -628,12 +628,12 @@ div.loading{
     }
 
     .block-active .nav-item-line{
-        min-width: 30px !important;
+        min-width: 60px !important;
         height: 2px;
     }
 
     .nav-item-hidden{
-        bottom : -120px;
+        bottom : -160px;
     }
 
 }

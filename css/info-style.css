@@ -298,6 +298,13 @@ p.dark-color-text{
         opacity: 1 !important;
     }
 
+    .skill-group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 2.5rem;
+    }
+
 }
 
 @media screen and (min-width: 1025px) {
