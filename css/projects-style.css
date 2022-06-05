@@ -25,6 +25,7 @@
     padding: 1rem 0.5rem;
     
     width: 100%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -203,6 +204,16 @@
     .project{
         padding: 2rem;
         flex-direction: row;
+       
+    }
+
+    .endline{
+        width: 5rem;
+        height: 2px;
+        min-height: 2px;
+        background-color: var(--gray);
+        color: var(--gray);
+        margin: 3rem 0;
     }
 
     .project-details{
@@ -224,8 +235,6 @@
         box-shadow: 1px 1px 4px var(--gray);
     }
 
-
-
     .project1-overlay{
         background-image: url("../images/pokedex/pokedex1.png");
     }
@@ -236,6 +245,10 @@
 
     .project3-overlay{
         background-image: url("../images/minesweeper/minesweeper4.png");
+    }
+ 
+    .project4-overlay{
+        background-image: url("../images/filerepo/filerepo3.png");
     }
 
     .project-image-container:hover ~ .project-overlay{
