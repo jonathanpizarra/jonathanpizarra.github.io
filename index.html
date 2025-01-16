@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Jonathan Pizarra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/my-favicon.png">
     <script src="https://kit.fontawesome.com/9f6bb76486.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -41,7 +42,7 @@
     
                         <div class="circle dark-circle"></div>
         
-                        <div class="connect-item connect-email">
+                        <a href="mailto:atanpizarra@gmail.com" class="connect-item connect-email">
                             <div class="connect-icon email-icon">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
@@ -49,7 +50,7 @@
                                 <div class="connect-text connect-text1 email-text1"><span>atanpizarra@gmail.com</span></div>
                                 <div class="connect-text connect-text2 email-text2"><span>atanpizarra@gmail.com</span></div>
                             </div>
-                        </div>
+                        </a>
         
                         <div class="circle gray-circle"></div>
         
@@ -78,8 +79,8 @@
                 </div>
 
                 <div class="footer-text">
-                    <p>This site: An attempt to be creative and experimental.</p>
-                   <p> &copy; Jonathan Pizarra | 2022</p>
+                    <p>An attempt to be creative and experimental.</p>
+                   <p id="footer-id"> &copy; Jonathan Pizarra | <i id="footer-year"></i></p>
                 </div>
 
                 
@@ -171,6 +172,7 @@
                         <div class="project-title">Minesweeper</div>
                         <div class="tech-items">
                             <div class="tech-item">jQuery</div>
+                            <div class="tech-item">Game</div>
                         </div>
                         <div class="project-description">
                             An implementation of the classic minesweeper game utilizing jQuery
@@ -199,7 +201,7 @@
                         <div class="tech-items">
                             <div class="tech-item">Django</div>
                             <div class="tech-item">Bootstrap</div>
-
+                            <div class="tech-item">CRUD</div>
                         </div>
                         <div class="project-description">
                             A collective file repository web app that allows anyone to upload/update files.
@@ -241,22 +243,22 @@
                         </p>
                         <p class="info-text-p dark-color-text">
                             <span class="info-text-span">Loves <span class="info-highlight">learning</span> new stuff. 
-                                <span class="sub sub2">Currently tinkering with <strike>ReactJS</strike> Web3</span>
+                                <span class="sub sub2">Currently tinkering with <strike>ReactJS</strike> Vue</span>
                             </span>
                         </p>
                         <p class="info-text-p light-color-text">
                             <span class="info-text-span">Critical <span class="info-highlight">thinker</span>. 
-                                <span class="sub sub3">I always consider all scenarios and edge cases</span> 
+                                <span class="sub sub3">Break it down into smaller tasks</span> 
                             </span>
                         </p>
                         <p class="info-text-p mid-color-text"> 
                             <span class="info-text-span"><span class="info-highlight">Puzzle</span> lover. 
-                                <span class="sub sub4">Any kind of puzzle, but especially jigsaw puzzles.</span>
+                                <span class="sub sub4">Anything that piques my interest.</span>
                             </span>
                         </p>
                         <p class="info-text-p dark-color-text">
                             <span class="info-text-span">Problem <span class="info-highlight">solver</span>. 
-                                <span class="sub sub5">Any problems you had in mind? Let's connect!</span>
+                                <span class="sub sub5">Any problems you have in mind? Let's connect!</span>
                             </span>
                         </p>
                     </div>
@@ -358,21 +360,21 @@
 
                     <div class="name-box">
                         <div class="name-box-texts" >
-                            <div>JON</div>
-                            <div>ATH</div>
-                            <div>ANP</div>
-                            <div>IZA</div>
-                            <div>RRA</div>
+                            <div><p>0100 1010</p><p>0100 1111</p><p>0100 1110</p></div>
+                            <div><p>0100 0001</p><p>0101 0100</p><p>0100 1000</p></div>
+                            <div><p>0100 0001</p><p>0100 1110</p><p>0101 0000</p></div>
+                            <div><p>0100 1001</p><p>0101 1010</p><p>0100 0001</p></div>
+                            <div><p>0101 0010</p><p>0101 0010</p><p>0100 0001</p></div>
                         </div>
                     </div>
 
                     <div class="name-bar name-bar-intro">
                         <div class="name-bar-texts">
-                            <div>JON</div>
-                            <div>ATH</div>
-                            <div>ANP</div>
-                            <div>IZA</div>
-                            <div>RRA</div>
+                            <div><p>0100 1010</p><p>0100 1111</p><p>0100 1110</p></div>
+                            <div><p>0100 0001</p><p>0101 0100</p><p>0100 1000</p></div>
+                            <div><p>0100 0001</p><p>0100 1110</p><p>0101 0000</p></div>
+                            <div><p>0100 1001</p><p>0101 1010</p><p>0100 0001</p></div>
+                            <div><p>0101 0010</p><p>0101 0010</p><p>0100 0001</p></div>
                         </div>
                     </div>
 
@@ -380,7 +382,7 @@
 
                 <div class="home-web-developer">
                     <div class="circle web-dev-circle"></div>
-                    <div class="web-dev-text">Web Developer</div>
+                    <div class="web-dev-text">Web and Mobile Developer</div>
                 </div>
             </div>
         </div>
@@ -391,7 +393,7 @@
     <script src="./js/main-script.js"></script>
     <script src="./js/info-script.js"></script>
     <script src="./js/projects-script.js"></script>
-
+    <script src="./js/connect-script.js"></script>
     
 </body>
 </html>

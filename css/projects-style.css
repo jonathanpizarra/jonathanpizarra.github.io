@@ -148,7 +148,7 @@
 }
 
 .project-link:hover{
-    transform: scale(1.1, 1.1);
+    transform: scale(1.01, 1.01);
 }
 
 .project-link:hover .project-link-text1{
@@ -168,7 +168,7 @@
     overflow: hidden;
     color: var(--dark);
     font-weight: 600;
-    background-color: var(--light);
+    background-color: var(--gray);
     border: 1px solid var(--gray);
     border-left-width: 0.25rem;
     padding: 0.2rem 0;
