@@ -70,6 +70,7 @@
     position: absolute;
     right:0;
     left:0;
+    overflow: hidden;
 }
 
 .info-text p{
@@ -394,6 +395,8 @@ p.dark-color-text{
 
     .info-text p{
         font-size: 1.25rem;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     p.info-text-big{
