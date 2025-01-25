@@ -22,8 +22,8 @@
     margin: 1rem;
     position: relative;
     /* height: 90%; */
-    height: 100%;
-    min-height: 90%;
+    height: 41rem;
+    min-height: 41rem;
     /* border: 1px solid var(--mid); */
     overflow: hidden;
     /* display: flex;
@@ -56,9 +56,9 @@
     font-weight: 700;
 }
 
-/* .info-my-name{
-    text-decoration: underline;
-} */
+.info-my-name:hover{
+    color: var(--dark);
+}
 
 .info-text{
     
@@ -66,17 +66,18 @@
     flex-grow: 1; */
     width: 100%;
     height: 100%;
-    padding: 2.5rem;
+    padding: 0 2.5rem 2.5rem;
     position: absolute;
     right:0;
     left:0;
+    overflow: hidden;
 }
 
 .info-text p{
     color: var(--light);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.2rem;
     margin: 1rem 0;
     min-width: 100%;
     cursor: default;
@@ -98,22 +99,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 1rem;
 }
 
 .info-circle{
     background-color: var(--light);
 }
 
+.circle-box{
+    width: 100%;
+    margin: 0 0 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.circle-box-pad-0{
+    padding-left: 0 !important;
+}
+
+.circle-margin{
+    margin:2rem 0;
+    padding: 0;
+}
+
 .info-title-text{
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.5rem;
+    font-weight: 600;
     letter-spacing: 0.75rem;
     color: var(--light);
+    margin: 1rem auto;
     padding-left: 0.75rem;
 }
 
 p.info-text-big{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 p.light-color-text{
@@ -129,40 +149,45 @@ p.dark-color-text{
 }
 
 .sub{
-    display: none;
+    opacity: 1;
 }
 
 /* ================ skill =================== */
 
 .skills-content{
-    margin: 2rem auto;
+    margin: 0.5rem auto 2rem;
     padding-bottom: 5rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
+    width: 100%;
 }
 
 .skill-group{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    margin: 0.5rem 0;
+    padding: 0 2rem;
+    width: 100%;
 }
 
 .skill{
     position: relative;
-    border: 1px solid var(--light);
+    border: 0.5px solid var(--mid);
     height: 2rem;
-    width: 14rem;
-    font-size: 1rem;
+    /* width: 14rem; */
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.25rem;
-    margin: 0.5rem 0;
-    box-shadow: 1px 1px 1px var(--dark);
-    transition: all 0.5s;
+    margin: 0.75rem 0.5rem 0.75rem 0.5rem;
+    padding: 0 0.25rem;
+    box-shadow: 1px 1px 1px var(--gray);
+    transition: transform 0.5s, opacity 2s;
     cursor: default;
+    opacity: 0;
 }
 
 .skill:hover {
@@ -179,8 +204,13 @@ p.dark-color-text{
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    padding-left: 1rem;
+    padding: 0 1rem;
     white-space: nowrap;
+    color: var(--light);
+    user-select: none; /* Standard property */ 
+    -webkit-user-select: none; /* For Safari */ 
+    -moz-user-select: none; /* For Firefox */ 
+    -ms-user-select: none; /* For Internet Explorer and Edge */
 }
 
 .skill-name1{
@@ -218,58 +248,115 @@ p.dark-color-text{
     color: var(--mid);
 }
 
-/* ====================  */
-
-.skill-show .skill-name-js{
-    width: 90%;
+.skills-title {
+    color: var(--light);
+    font-size: 0.9rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
 }
 
-.skill-show .skill-name-php{
-    width: 55%;
+.skills-flexbox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.skill-show .skill-name-csharp{
-    width: 40%;
+.skills-title-light{
+    color: var(--dark) !important;
+    font-weight: 600;
 }
 
-.skill-show .skill-name-java{
-    width: 65%;
+.line{
+    height: 1px;
+    padding: 1px 0 0 0;
+    margin: 2.5rem auto;
+    border-top: 0.5px solid var(--mid);
 }
 
-.skill-show .skill-name-cpp{
-    width: 30%;
-}
-
-.skill-show .skill-name-python{
-    width: 40%;
-}
-
-.skill-show .skill-name-sql{
-    width: 60%;
-}
-
-
-.skill-show .skill-name-react{
-    width: 60%;
-}
-
-.skill-show .skill-name-express{
+.line-75{
     width: 75%;
 }
 
-.skill-show .skill-name-android{
-    width: 70%;
-}
-
-.skill-show .skill-name-firebase{
-    width: 40%;
-}
-
-.skill-show .skill-name-django{
+.line-50{
     width: 50%;
 }
 
+.line-10{
+    width: 10%;
+}
+
+.align-left{
+    margin: 0 !important;
+}
+
+/* ==================== */
+
+.pic-box{
+    border: 1px solid var(--gray);
+    border-radius: 50%;
+    width: 5.5rem;
+    height: 5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light);
+    margin-left: 2.5rem;
+}
+
+.pic-box img{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+/* ====================  */
+
+.skill-show {
+    opacity: 1 !important;
+}
+
+
 /* ================ */
+
+@media screen and (min-width: 321px) {
+    .info-container{
+        height: 36rem;
+        min-height: 36rem;
+    }
+}
+
+@media screen and (min-width: 376px) {
+    .info-container{
+        height: 33rem;
+        min-height: 33rem;
+    }   
+}
+
+@media screen and (min-width: 426px) {
+    .skills-flexbox{
+        justify-content: flex-start;
+    }    
+
+    .info-container{
+        height: 26rem;
+        min-height: 26rem;
+    } 
+
+    .circle-box{
+        width: 100%;
+        padding-left: 0.75rem;
+        margin: 0 0 0.5rem;
+        display: block;
+    }
+
+    .skills-title {
+        padding-left: 0.75rem;
+        text-align: left;
+    }
+}
 
 @media screen and (min-width: 769px) {
     p.info-text-big{
@@ -277,8 +364,9 @@ p.dark-color-text{
     }
 
     .info-container{
-        height: 90vh;
-        min-height: 90vh;
+        height: 38rem;
+        min-height: 38rem;
+        margin-top:2rem
     }
 
     .info-text-span{
@@ -286,7 +374,7 @@ p.dark-color-text{
     }
 
     .sub{
-        display: inline;
+        display: block;
         white-space: nowrap;
         /* position: absolute; */
         /* left: 105%; */
@@ -302,7 +390,17 @@ p.dark-color-text{
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 1rem 2.5rem;
+        /* margin: 1rem 2.5rem; */
+    }
+
+    .info-text p{
+        font-size: 1.25rem;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    p.info-text-big{
+        font-size: 3rem;
     }
 
 }
@@ -310,16 +408,31 @@ p.dark-color-text{
 @media screen and (min-width: 1025px) {
     
     .info-container{
-        height: 80vh;
-        min-height: 80vh;
+        height: 45rem;
+        min-height: 45rem;
     }
 
     .info-text p{
         font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     p.info-text-big{
-        font-size: 4rem;
+        font-size: 3rem;
     }
+
+}
+
+@media screen and (min-width: 1080px){
+
+    .info-container{
+        height: 36rem;
+        min-height: 36rem;
+    }
+
+    .sub{
+        display: inline;
+    }
+    
 }
 

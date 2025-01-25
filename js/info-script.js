@@ -39,5 +39,75 @@ $(function(){
         }
     })
 
+    // Nothing to see here.....
+    let interval
+    let panicState = false
+    $(".skill-springboot").each((i, e) => {
+        console.log(panicState)
+        $(e).on("click", ()=>{
+            if(panicState) return
+            panicState = true
+            console.log('entereedd')
+            $(".skills-title-backend")[0].innerText = "What have you done!?"
+            interval = setInterval(()=>{
+                const r = Math.floor(Math.random() * (255 - 100 + 1)) + 100;
+                const color = `rgb(${r}, 200, 200)`
+                document.documentElement.style.setProperty("--light", color)
+                $(".skills-title-backend").addClass('skills-title-light')
+            }, 100)
+        })
+        
+    })
+
+    $(".skill-sonarqube").each((i, e) => {
+        console.log(panicState)
+        $(e).on("click", ()=>{
+            if(!panicState) return
+            panicState = false
+            console.log('sonar cube entereed')
+            $(".skills-title-backend")[0].innerText = "BACKEND"
+            document.documentElement.style.setProperty("--light", "#f9f9f9")
+            $(".skills-title-backend").removeClass('skills-title-light')
+            clearInterval(interval)
+        })        
+        
+    })
+
+    $.fn.isInProjectViewport = function() {
+
+        let paddingTop = $(".skills-content").offset().top;
+        let paddingBottom = $(window).height()- $(".skills-content").outerHeight() - paddingTop
+
+        let viewportTop = $(window).scrollTop() ;
+        let viewportBottom = viewportTop + $(window).height();
+        
+        let elementTop = $(this).offset().top;
+        let elementBottom = elementTop + $(this).outerHeight();
+    
+        return elementBottom > (viewportTop + paddingTop) && elementTop < (viewportBottom - paddingBottom);
+    };
+
+    $(".skillss-content").scroll(function(){
+        console.log('scrolling...')
+
+        let skills = $(".skill")
+
+        for(s of skills){
+
+            if($(s).isInProjectViewport()){
+                // console.log('is in vp', s)
+                if(!$(s).hasClass("skill-show")){
+                    $(s).addClass("skill-show")
+                    // console.log("has class now", p)
+                }
+            }else{
+                if($(s).hasClass("skill-show")){
+                    $(s).removeClass("skill-show")
+                    // console.log("removed class now", p)
+                }
+            }
+            
+        }
+    })
 
 })

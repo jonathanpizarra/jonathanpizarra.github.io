@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    overflow: hidden;
 }
 
 .connect-container{
@@ -20,7 +20,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--white);
     padding: 3rem;
 }
 
@@ -36,7 +35,7 @@
 }
 
 .connect-main-text{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.25rem;
     color: var(--gray);
@@ -78,20 +77,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .connect-text2{
     overflow: hidden;
     width: 0;
-    transition: width 1s ease-in-out;
+    transition: width 0.5s ease-in-out;
 }
 
 .connect-item:hover .connect-text2{
     width: 100%;
 }
 
-.connect-github, .connect-linkedin{
+.connect-github, .connect-linkedin, .connect-email{
     cursor: pointer;
 }
 
@@ -205,17 +204,28 @@
     color: var(--gray);
     height: 2.5rem;
     margin-bottom: 0.5rem;
-    opacity: 0;
+    opacity: 1;
+    width: 24rem;
 }
 
 .footer-text p{
     text-align: center;
-    margin-bottom: 00.25rem;
+    margin: 0.25rem 0;
 }
 
-@media screen and (min-width: 768px) {
+#footer-year{
+    font-style: normal;
+}
+
+@media screen and (min-width: 426px) {
+    .connect-box{
+        border: 1px solid var(--mid);
+    }
+}
+
+@media screen and (min-width: 769px) {
     .footer-text{
-        opacity: 1;
+        font-size: 1rem;
     }
 }
 

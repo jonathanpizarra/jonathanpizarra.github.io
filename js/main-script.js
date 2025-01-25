@@ -3,7 +3,50 @@ let activeTab = "home"
 // ===============================
 
 $(function(){
-    console.log("asf")
+    console.log("What are you looking for?")
+
+    // =====================================
+    let nameBoxes = $(".name-box-texts div p")
+    let nameBars = $(".name-bar-texts div p")
+    let letters = new Array(15).fill(0)
+
+    nameBars.each((index, element)=>{
+        $(element).addClass("bin")
+        $(nameBoxes[index]).addClass("bin")
+
+        $(element).on("click", (e)=>{
+            console.log(e.target.innerText, index, e.target.innerText.charCodeAt(0).toString(2).padStart(8, '0'))
+            if(e.target.innerText.length == 1){
+
+                let bin = e.target.innerText.charCodeAt(0).toString(2).padStart(8, '0')
+                bin = bin.substring(0, 4) + ' ' + bin.substring(4)
+                console.log("bin", bin)
+                $(element).addClass("bin")
+                $(nameBoxes[index]).addClass("bin")
+                e.target.innerText = bin
+                nameBoxes[index].innerText = bin
+
+                letters[index] = 0
+            }else if(e.target.innerText.length == 9){
+                console.log("ddd", e.target.innerText.split(' ').join(''))
+                let dec = parseInt(e.target.innerText.split(' ').join(''), 2)
+                let letter = String.fromCharCode(dec)
+                console.log("dec", dec, "text:",e.target.innerText, "letter:", letter)
+                $(element).removeClass("bin")
+                $(nameBoxes[index]).removeClass("bin")
+                e.target.innerText = letter
+                nameBoxes[index].innerText = letter
+
+                letters[index] = 1
+            }
+
+            if(letters.every((l)=> l == 1)){
+                $(".web-dev-text")[0].innerText = "Congrats! Now, what?"
+            }
+        })
+    })
+
+    // =====================================
 
     const init = () =>{
         // trigger intro animation
@@ -144,6 +187,7 @@ $(function(){
     $("#connect").on("click", connectButtonListener)
 
 
-
-    init()
+    // ===================================================
+    init() 
+    // ===================================================
 })

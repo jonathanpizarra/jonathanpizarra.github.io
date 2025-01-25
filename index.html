@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Jonathan Pizarra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/my-favicon.png">
     <script src="https://kit.fontawesome.com/9f6bb76486.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -19,14 +20,10 @@
 </head>
 <body>
 
-    <!-- <div id="site"> SITE UNDER CONSTRUCTION</div> -->
-
     <div class="container">
-        <div class="block loading" id="loader">
+        <div class="block loading" id="loader"></div>
 
-        </div>
-
-        <div class="block loading" id="connect">  
+        <div class="block " id="connect">  
             <div class="btn-container btn-container-connect">
                 <button class="nav-item nav-item-hidden" id="connect-btn" > 
                     <span class="nav-item-line"></span> 
@@ -37,11 +34,11 @@
 
                 <div class="connect-container">
                     <div class="connect-box">
-                        <div class="connect-main-text">Let's Connect!</div>
+                        <div class="connect-main-text">LET'S CONNECT!</div>
     
                         <div class="circle dark-circle"></div>
         
-                        <div class="connect-item connect-email">
+                        <a href="mailto:atanpizarra@gmail.com" class="connect-item connect-email">
                             <div class="connect-icon email-icon">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
@@ -49,7 +46,7 @@
                                 <div class="connect-text connect-text1 email-text1"><span>atanpizarra@gmail.com</span></div>
                                 <div class="connect-text connect-text2 email-text2"><span>atanpizarra@gmail.com</span></div>
                             </div>
-                        </div>
+                        </a>
         
                         <div class="circle gray-circle"></div>
         
@@ -78,8 +75,8 @@
                 </div>
 
                 <div class="footer-text">
-                    <p>This site: An attempt to be creative and experimental.</p>
-                   <p> &copy; Jonathan Pizarra | 2022</p>
+                    <p>An attempt to be creative and experimental.</p>
+                   <p id="footer-id"> &copy; Jonathan Pizarra | <i id="footer-year"></i></p>
                 </div>
 
                 
@@ -87,7 +84,7 @@
             </div>
         </div>
 
-        <div class="block loading" id="projects">  
+        <div class="block " id="projects">  
             <div class="btn-container btn-container-projects">
                 <button class="nav-item nav-item-hidden" id="projects-btn" > 
                     <span class="nav-item-line"></span> 
@@ -97,7 +94,7 @@
             <div class="content projects-content content-hidden">
 
                 <div class="personal-projects-text">
-                    Personal Projects
+                    PERSONAL PROJECTS
                 </div>
                 <div class="circle projects-circle"></div>
 
@@ -114,8 +111,7 @@
                             <div class="tech-item">ReactJS</div>
                             <div class="tech-item">Pokémon API</div>
                         </div>
-                        <div class="project-description">
-                            A Pokémon Web App that shows the main stats of each Pokémon using the free Pokémon API
+                        <div class="project-description">A Pokémon Web App that shows the main stats of each Pokémon using the free Pokémon API
                         </div>
 
                         <a href="https://jonathanpizarra.github.io/pokedex-app/" target="_blank" class="project-link">
@@ -171,6 +167,7 @@
                         <div class="project-title">Minesweeper</div>
                         <div class="tech-items">
                             <div class="tech-item">jQuery</div>
+                            <div class="tech-item">Game</div>
                         </div>
                         <div class="project-description">
                             An implementation of the classic minesweeper game utilizing jQuery
@@ -199,7 +196,7 @@
                         <div class="tech-items">
                             <div class="tech-item">Django</div>
                             <div class="tech-item">Bootstrap</div>
-
+                            <div class="tech-item">CRUD</div>
                         </div>
                         <div class="project-description">
                             A collective file repository web app that allows anyone to upload/update files.
@@ -219,7 +216,7 @@
             </div>
         </div>
 
-        <div class="block loading" id="info">  
+        <div class="block " id="info">  
             <div class="btn-container btn-container-info">
                 <button class="nav-item nav-item-hidden" id="info-btn" > 
                     <span class="nav-item-line"></span> 
@@ -229,10 +226,15 @@
             <!-- <div class="blur info-blur"></div> -->
             <div class="content info-content ">
                 <div class="info-container">
-                    
+                    <div class="pic-container">
+                        <div class="pic-box">
+                            <img src="/images/my-favicon.png" alt="ME">
+                        </div>
+                    </div>
                     <div class="info-text">
                         <p class="info-text-big">Hi!</p>
                         <p class="info-text-big">I'm <span class="info-highlight info-my-name">Jonathan Pizarra</span></p>
+                        <div class="line line-10 align-left"> </div>
                         <p class="info-text-p mid-color-text">
                             <span class="info-text-span">Web and Mobile <span class="info-highlight">developer</span>. 
                             </span>
@@ -241,22 +243,22 @@
                         </p>
                         <p class="info-text-p dark-color-text">
                             <span class="info-text-span">Loves <span class="info-highlight">learning</span> new stuff. 
-                                <span class="sub sub2">Currently tinkering with <strike>ReactJS</strike> Web3</span>
+                                <span class="sub sub2">Currently tinkering with <strike>ReactJS</strike> Vue.</span>
                             </span>
                         </p>
                         <p class="info-text-p light-color-text">
                             <span class="info-text-span">Critical <span class="info-highlight">thinker</span>. 
-                                <span class="sub sub3">I always consider all scenarios and edge cases</span> 
+                                <span class="sub sub3">Analyzing issues and corner cases.</span> 
                             </span>
                         </p>
                         <p class="info-text-p mid-color-text"> 
                             <span class="info-text-span"><span class="info-highlight">Puzzle</span> lover. 
-                                <span class="sub sub4">Any kind of puzzle, but especially jigsaw puzzles.</span>
+                                <span class="sub sub4">Anything that piques my interest.</span>
                             </span>
                         </p>
                         <p class="info-text-p dark-color-text">
                             <span class="info-text-span">Problem <span class="info-highlight">solver</span>. 
-                                <span class="sub sub5">Any problems you had in mind? Let's connect!</span>
+                                <span class="sub sub5">Any problems you have in mind? Let's connect!</span>
                             </span>
                         </p>
                     </div>
@@ -267,75 +269,180 @@
                 </div>
 
                 <div class="skills-container">
-                    <div class="circle info-circle"></div>
                     <div class="info-title-text">SKILLS</div>
 
                     <div class="skills-content">
                         <div class="skill-group">
-                            <div class="circle info-circle"></div>
+                            <div class="circle-box">
+                                <div class="circle info-circle circle-margin"></div>
+                            </div>
+                            <div class="skills-title">FRONTEND</div>
 
-                            <div class="skill skill-js">
-                                <div class="skill-name skill-name1 skill-name-js">JavaScript</div>
-                                <div class="skill-name skill-name2">JavaScript</div>
-                            </div>
-    
-                            <div class="skill skill-php">
-                                <div class="skill-name skill-name1 skill-name-php">PHP</div>
-                                <div class="skill-name skill-name2">PHP</div>
-                            </div>
-    
-                            <div class="skill skill-csharp">
-                                <div class="skill-name skill-name1 skill-name-csharp">C#</div>
-                                <div class="skill-name skill-name2">C#</div>
-                            </div>
-    
-                            <div class="skill skill-java">
-                                <div class="skill-name skill-name1 skill-name-java">Java</div>
-                                <div class="skill-name skill-name2">Java</div>
-                            </div>
-    
-                            <div class="skill skill-cpp">
-                                <div class="skill-name skill-name1 skill-name-cpp">C++</div>
-                                <div class="skill-name skill-name2">C++</div>
-                            </div>
-    
-                            <div class="skill skill-python">
-                                <div class="skill-name skill-name1 skill-name-python">Python</div>
-                                <div class="skill-name skill-name2">Python</div>
-                            </div>
-    
-                            <div class="skill skill-sql">
-                                <div class="skill-name skill-name1 skill-name-sql">SQL</div>
-                                <div class="skill-name skill-name2">SQL</div>
+                            <div class="skills-flexbox">
+                                <div class="skill skill-html">
+                                    <div class="skill-name">HTML</div>
+                                </div>
+
+                                <div class="skill skill-css">
+                                    <div class="skill-name">CSS</div>
+                                </div>
+
+                                <div class="skill skill-js">
+                                    <div class="skill-name">JavaScript</div>
+                                </div>
+
+                                <div class="skill skill-typescript">
+                                    <div class="skill-name">Typescript</div>
+                                </div>
+        
+                                <div class="skill skill-bootstrap">
+                                    <div class="skill-name">Bootstrap</div>
+                                </div>
+        
+                                <div class="skill skill-jquery">
+                                    <div class="skill-name">jQuery</div>
+                                </div>
+        
+                                <div class="skill skill-react">
+                                    <div class="skill-name">React</div>
+                                </div>
+        
+                                <div class="skill skill-vue">
+                                    <div class="skill-name">Vue</div>
+                                </div>
+
                             </div>
                         </div>
 
                         <div class="skill-group">
-                            <div class="circle info-circle"></div>
-
-                            <div class="skill skill-specific skill-react">
-                                <div class="skill-name skill-name3 skill-name-react">ReactJS</div>
-                                <div class="skill-name skill-name4 ">ReactJS</div>
+                            <div class="circle-box">
+                                <div class="circle info-circle circle-margin"></div>
                             </div>
+                            <div class="skills-title skills-title-backend">BACKEND</div>
 
-                            <div class="skill skill-specific skill-express">
-                                <div class="skill-name skill-name3 skill-name-express">ExpressJS</div>
-                                <div class="skill-name skill-name4 ">ExpressJS</div>
+                            <div class="skills-flexbox">
+
+                                <div class="skill skill-java">
+                                    <div class="skill-name">Java</div>
+                                </div>
+
+                                <div class="skill skill-springboot">
+                                    <div class="skill-name">Spring Boot</div>
+                                </div>
+
+                                <div class="skill skill-php">
+                                    <div class="skill-name">PHP</div>
+                                </div>
+
+                                <div class="skill skill-kafka">
+                                    <div class="skill-name">Apache Kafka</div>
+                                </div>
+
+                                <div class="skill skill-mysql">
+                                    <div class="skill-name">MySQL</div>
+                                </div>
+
+                                <div class="skill skill-postgresql">
+                                    <div class="skill-name">PostgreSQL</div>
+                                </div>
+
+                                <div class="skill skill-express">
+                                    <div class="skill-name">ExpressJS</div>
+                                </div>
+    
+                                <div class="skill skill-firebase">
+                                    <div class="skill-name">Firebase</div>
+                                </div>
+
+                                <div class="skill skill-junit">
+                                    <div class="skill-name">JUnit</div>
+                                </div>
+
+                                <div class="skill skill-liquibase">
+                                    <div class="skill-name">Liquibase</div>
+                                </div>
+    
                             </div>
+                        </div>
 
-                            <div class="skill skill-specific skill-android">
-                                <div class="skill-name skill-name3 skill-name-android">Android (Java)</div>
-                                <div class="skill-name skill-name4 ">Android (Java)</div>
+                        <div class="skill-group">
+                            <div class="circle-box">
+                                <div class="circle info-circle circle-margin"></div>
                             </div>
+                            <div class="skills-title">FULL STACK / MOBILE</div>
 
-                            <div class="skill skill-specific skill-firebase">
-                                <div class="skill-name skill-name3 skill-name-firebase">Firebase</div>
-                                <div class="skill-name skill-name4 ">Firebase</div>
+                            <div class="skills-flexbox">
+
+                                <div class="skill skill-pern">
+                                    <div class="skill-name">PERN</div>
+                                </div>
+
+                                <div class="skill skill-django">
+                                    <div class="skill-name">Django</div>
+                                </div>
+
+                                <div class="skill skill-android">
+                                    <div class="skill-name">Android (Java)</div>
+                                </div>
+
                             </div>
+                        </div>
 
-                            <div class="skill skill-specific skill-django">
-                                <div class="skill-name skill-name3 skill-name-django">Django</div>
-                                <div class="skill-name skill-name4 ">Django</div>
+                        <div class="skill-group">
+                            <div class="circle-box">
+                                <div class="circle info-circle circle-margin"></div>
+                            </div>
+                            <div class="skills-title">TOOLS</div>
+
+                            <div class="skills-flexbox">
+                                <div class="skill skill-git">
+                                    <div class="skill-name">Git</div>
+                                </div>
+
+                                <div class="skill skill-github">
+                                    <div class="skill-name">Github</div>
+                                </div>
+
+                                <div class="skill skill-gitlab">
+                                    <div class="skill-name">Gitlab</div>
+                                </div>
+
+                                <div class="skill skill-bitbucket">
+                                    <div class="skill-name">Bitbucket</div>
+                                </div>
+
+                                <div class="skill skill-splunk">
+                                    <div class="skill-name">Splunk</div>
+                                </div>
+
+                                <div class="skill skill-vscode">
+                                    <div class="skill-name">VS Code</div>
+                                </div>
+
+                                <div class="skill skill-intellij">
+                                    <div class="skill-name">IntelliJ IDEA</div>
+                                </div>
+
+                                <div class="skill skill-postman">
+                                    <div class="skill-name">Postman</div>
+                                </div>
+
+                                <div class="skill skill-apifox">
+                                    <div class="skill-name">Apifox</div>
+                                </div>
+
+                                <div class="skill skill-sonarqube">
+                                    <div class="skill-name">SonarQube</div>
+                                </div>
+
+                                <div class="skill skill-jira">
+                                    <div class="skill-name">Jira</div>
+                                </div>
+
+                                <div class="skill skill-confluent">
+                                    <div class="skill-name">Confluent</div>
+                                </div>
+                                
                             </div>
                         </div>
 
@@ -346,7 +453,7 @@
             </div>
         </div>
 
-        <div class="block loading home-show" id="home">  
+        <div class="block " id="home">  
             <div class="btn-container btn-container-home">
                 <button class="nav-item nav-item-hidden" id="home-btn" > 
                     <span class="nav-item-line"></span> 
@@ -358,21 +465,21 @@
 
                     <div class="name-box">
                         <div class="name-box-texts" >
-                            <div>JON</div>
-                            <div>ATH</div>
-                            <div>ANP</div>
-                            <div>IZA</div>
-                            <div>RRA</div>
+                            <div><p>J</p><p>O</p><p>N</p></div>
+                            <div><p>A</p><p>T</p><p>H</p></div>
+                            <div><p>A</p><p>N</p><p>P</p></div>
+                            <div><p>I</p><p>Z</p><p>A</p></div>
+                            <div><p>R</p><p>R</p><p>A</p></div>
                         </div>
                     </div>
 
                     <div class="name-bar name-bar-intro">
                         <div class="name-bar-texts">
-                            <div>JON</div>
-                            <div>ATH</div>
-                            <div>ANP</div>
-                            <div>IZA</div>
-                            <div>RRA</div>
+                            <div><p>J</p><p>O</p><p>N</p></div>
+                            <div><p>A</p><p>T</p><p>H</p></div>
+                            <div><p>A</p><p>N</p><p>P</p></div>
+                            <div><p>I</p><p>Z</p><p>A</p></div>
+                            <div><p>R</p><p>R</p><p>A</p></div>
                         </div>
                     </div>
 
@@ -380,7 +487,7 @@
 
                 <div class="home-web-developer">
                     <div class="circle web-dev-circle"></div>
-                    <div class="web-dev-text">Web Developer</div>
+                    <div class="web-dev-text">Web and Mobile Developer</div>
                 </div>
             </div>
         </div>
@@ -391,7 +498,7 @@
     <script src="./js/main-script.js"></script>
     <script src="./js/info-script.js"></script>
     <script src="./js/projects-script.js"></script>
-
+    <script src="./js/connect-script.js"></script>
     
 </body>
 </html>

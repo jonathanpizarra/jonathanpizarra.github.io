@@ -2,8 +2,10 @@
     --dark: #0d1f2d;
     --gray: #546A7B;
     --mid: #9EA3B0;
-    --white: #FAE1DF;
-    --light: #E4C3AD;
+    /* --white: #FAE1DF; */
+    /* --light: #E4C3AD; */
+    --white: #f9f9f9;
+    --light: #f9f9f9;
 
     --pink: #f788e3;
     --purple: #9b88f7;
@@ -302,6 +304,20 @@ div.loading{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    /* align-items: center; */
+}
+
+.name-box-texts div, .name-bar-texts div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.name-box-texts div p, .name-bar-texts div p{
+    width:2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -368,6 +384,15 @@ div.loading{
     color: var(--dark);
 }
 
+.bin{
+    font-size: 0.6rem;
+    font-weight: bold;
+    font-family: monospace;
+    white-space: pre-wrap;
+    letter-spacing: 0.15rem;
+    line-height: 0.9rem;
+}
+
 /* ============= home - web dev text ====================  */
 
 .home-web-developer{
@@ -397,7 +422,7 @@ div.loading{
 .web-dev-text{
     font-size: 1rem;
     font-weight: 300;
-    letter-spacing: 0.75rem;
+    letter-spacing: 0.5rem;
     color: var(--light);
     opacity: 0;
     transition: opacity 0.5s ease-in-out 0.95s;
@@ -628,7 +653,7 @@ div.loading{
     }
 
     .block-active .nav-item-line{
-        min-width: 60px !important;
+        min-width: 100px !important;
         height: 2px;
     }
 
