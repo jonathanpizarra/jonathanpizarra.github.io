@@ -179,7 +179,7 @@ p.dark-color-text{
     border: 0.5px solid var(--mid);
     height: 2rem;
     /* width: 14rem; */
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.25rem;
     margin: 0.75rem 0.5rem 0.75rem 0.5rem;
@@ -366,7 +366,7 @@ p.dark-color-text{
     .info-container{
         height: 38rem;
         min-height: 38rem;
-        margin-top:2rem
+        margin-top:4rem
     }
 
     .info-text-span{
@@ -410,6 +410,7 @@ p.dark-color-text{
     .info-container{
         height: 45rem;
         min-height: 45rem;
+        margin-top: 4rem;
     }
 
     .info-text p{
@@ -433,6 +434,8 @@ p.dark-color-text{
     .sub{
         display: inline;
     }
+
+
     
 }
 

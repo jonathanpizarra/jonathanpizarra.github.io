@@ -8,53 +8,117 @@ $(function(){
     // =====================================
     let nameBoxes = $(".name-box-texts div p")
     let nameBars = $(".name-bar-texts div p")
-    let letters = new Array(15).fill(0)
+    let letters = new Array(15).fill(1)
+    let wins = 0
+    let msgs = [
+        'Dev',
+        'Nothing to see here.',
+    ]
 
-    nameBars.each((index, element)=>{
-        $(element).addClass("bin")
-        $(nameBoxes[index]).addClass("bin")
+    nameBoxes.each((index, element)=>{
+        // $(element).addClass("bin")
+        // $(nameBars[index]).addClass("bin")
 
         $(element).on("click", (e)=>{
-            console.log(e.target.innerText, index, e.target.innerText.charCodeAt(0).toString(2).padStart(8, '0'))
             if(e.target.innerText.length == 1){
 
                 let bin = e.target.innerText.charCodeAt(0).toString(2).padStart(8, '0')
                 bin = bin.substring(0, 4) + ' ' + bin.substring(4)
-                console.log("bin", bin)
                 $(element).addClass("bin")
-                $(nameBoxes[index]).addClass("bin")
+                $(nameBars[index]).addClass("bin")
                 e.target.innerText = bin
-                nameBoxes[index].innerText = bin
+                nameBars[index].innerText = bin
 
                 letters[index] = 0
             }else if(e.target.innerText.length == 9){
-                console.log("ddd", e.target.innerText.split(' ').join(''))
                 let dec = parseInt(e.target.innerText.split(' ').join(''), 2)
                 let letter = String.fromCharCode(dec)
-                console.log("dec", dec, "text:",e.target.innerText, "letter:", letter)
                 $(element).removeClass("bin")
-                $(nameBoxes[index]).removeClass("bin")
+                $(nameBars[index]).removeClass("bin")
                 e.target.innerText = letter
-                nameBoxes[index].innerText = letter
+                nameBars[index].innerText = letter
 
                 letters[index] = 1
             }
 
-            if(letters.every((l)=> l == 1)){
-                $(".web-dev-text")[0].innerText = "Congrats! Now, what?"
+            if(letters.every((l)=> l == 0)){
+                if( wins == 0) wins++
+                $(".web-dev-text")[0].innerText = msgs[wins]
+            }else{
+                $(".web-dev-text")[0].innerText = msgs[0]
             }
         })
     })
 
+    const animateName = (here) => {
+        console.log('animate name called here', here)
+        $('.name-bar').css({left: 'auto', right: 0, width: '0.5rem'})
+        $('.name-bar-texts').css({left: 'auto', right: 0})
+        $('.name-bar').delay(1250).animate({left: 'auto', right: 0, width: '100%'}, 900, () => {
+            console.log('animation done');
+            $('.name-bar-texts').css({left: 0, right: 'auto'})
+        })
+        $('.name-bar').animate({width: '0.5rem', right: 'auto', left: 0}, 900, () => {
+            console.log('animation doneeeee')
+            $('.name-container').hover(()=>{
+                console.log('hovering...')
+            })
+        })
+        // $('.name-bar-texts').delay(2500).animate({right:0, left: auto}, 2000)
+        // $('.name-bar-texts').animate({left:0, right: auto}, 2000)
+    }
+
     // =====================================
 
-    const init = () =>{
-        // trigger intro animation
-        $(".block").removeClass("loading")
-        $(".nav-item").removeClass("nav-item-hidden")
+    const init = () =>{  
+/** 
+ * initial state:
+ * - loader div is 100vw. tabs are 30px
+ * - no transition style for tabs
+ * - 
+ * animate loader div width to 0 to show tabs
+ * check which tab is active in hash
+ * - if there is active tab in hash:
+ *   set active hash into 100% width
+ *   other tabs are still 30px
+ *   add transition for all tabs
+ *     - width, min-width, flex-grow
+ *   this will animate active tab into flex-grow:1
+ *   
+ *   
+ * - else: no active tab in hash:
+ *   - default to home
+ *   - set all tabs to 100vw: add .loading
+ *   - add transition to animate
+*/
+console.log('initt')
         setTimeout(() => {
-            $("#home").addClass("block-active").removeClass("home-show")
-        }, 750);
+            console.log('remove nav-item-hidden')
+            $(".nav-item").removeClass("nav-item-hidden")
+        }, 1000);
+        $('#loader').removeClass('loading')
+
+        let hash = window.location.hash
+        if(hash !== '' && hash !== '#home'){
+            $(hash).addClass('block-active')
+            $('#home').addClass('home-transition')
+            $('#info').addClass('info-transition')
+            $('#projects').addClass('projects-transition')
+            $('#connect').addClass('connect-transition')
+            console.log('hash add transition')
+        }else{
+            $('.block').addClass('loading')
+    
+            setTimeout(() => {
+                $('#home').addClass('home-transition')
+                $('#info').addClass('info-transition')
+                $('#projects').addClass('projects-transition')
+                $('#connect').addClass('connect-transition')
+                $('.block').removeClass('loading')
+                $('#home').addClass('block-active')
+                animateName('if else settimeout init')
+            }, 500);
+        }
         
     }
 
@@ -76,31 +140,44 @@ $(function(){
     };
     
     const removeActive = (tab)=>{
-        
-        $("#" + tab).removeClass("block-active")
+        console.log('active tab to remove', tab)
+        $("#" + tab).removeClass("block-active").delay(500).removeClass('scrollable')
 
     }
 
     const showActiveContent = (oldtab, newtab)=>{
 
         setTimeout(() => {
-            $("." + oldtab + "-content").addClass('content-hidden')
-            $("." + newtab + "-content").removeClass('content-hidden')
+            $("." + oldtab + "-content").addClass('content-hidden').removeClass('scrollable')
+            $("." + newtab + "-content").removeClass('content-hidden').addClass('scrollable')
         }, 500);
 
     }
 
-    const homeButtonListener = ()=>{
+    const homeButtonListener = (e)=>{
+        console.log('eeee', e)
+        console.log('fucking active ', activeTab)
+        // console.log('t', e.target)
+        // console.log('stop prop', e.target.stopPropagation)
+        // e.target.stopPropagation()
+        if(e == undefined){
+            console.log('e is undefined fucking undefind')
+            return
+        }
         if(activeTab === "home"){
             return
         }
-
+        if(activeTab === "projects"){
+            $(".project").removeClass("project-show")
+            $(".project-description").addClass("project-description-hide")
+        }
+        window.location.hash = "#home"
         removeActive(activeTab)
         $("#home").addClass("block-active")
         showActiveContent(activeTab, 'home')
+        animateName('homebutton listener')
 
         activeTab = "home"
-        $(".project").removeClass("project-show")
 
     }
 
@@ -108,13 +185,15 @@ $(function(){
         if(activeTab === "info"){
             return
         }
-
+        if(activeTab === "projects"){
+            $(".project").removeClass("project-show")
+            $(".project-description").addClass("project-description-hide")
+        }
+        window.location.hash = "#info"
         removeActive(activeTab)
         $("#info").addClass("block-active")
         showActiveContent(activeTab, 'info')
         activeTab = "info"
-
-        $(".project").removeClass("project-show")
 
         $(".info-content").animate({scrollTop : 0}, 500)
 
@@ -125,15 +204,17 @@ $(function(){
         if(activeTab === "projects"){
             return
         }
-
+        window.location.hash = "#projects"
         removeActive(activeTab)
+        $(".project").removeClass("project-show")
+        $(".project-description").removeClass("project-description-hide")
         $("#projects").addClass("block-active")
         showActiveContent(activeTab, 'projects')
 
         activeTab = "projects"
 
         // ==============================================
-        $(".project").removeClass("project-show")
+        
         // console.log($(".projects-content"))
 
         $(".projects-content").animate({scrollTop : 0})
@@ -145,16 +226,13 @@ $(function(){
         for(p of projs){
 
             if(first || $(p).isInProjectViewport()){
-                // console.log('is in vp', p)
                 if(!$(p).hasClass("project-show")){
                     $(p).addClass("project-show")
-                    // console.log("has class now", p)
                     first = false
                 }
             }else{
                 if($(p).hasClass("project-show")){
                     $(p).removeClass("project-show")
-                    // console.log("removed class now", p)
                 }
             }
             // break
@@ -167,27 +245,50 @@ $(function(){
         if(activeTab === "connect"){
             return
         }
-
+        if(activeTab === "projects"){
+            $(".project").removeClass("project-show")
+            $(".project-description").addClass("project-description-hide")
+        }
+        window.location.hash = "#connect"
         removeActive(activeTab)
         $("#connect").addClass("block-active")
         showActiveContent(activeTab, 'connect')
 
         activeTab = "connect"
-        $(".project").removeClass("project-show")
 
     }
 
+    const hashChecker = () => {
+        
+        switch(document.location.hash){
+            case '#home':
+                homeButtonListener()
+                break
+            case '#info':
+                infoButtonListener()
+                break
+            case '#projects':
+                projectsButtonListener()
+                break
+            case '#connect':
+                connectButtonListener()
+                break
+            default:
+                homeButtonListener()
+        }
+    }
 
 
     // ===================================================
 
-    $("#home").on("click", homeButtonListener)
+    $("#home").click(function (event) { event.stopPropagation(); homeButtonListener(event )} )
     $("#info").on("click", infoButtonListener)
     $("#projects").on("click", projectsButtonListener)
     $("#connect").on("click", connectButtonListener)
-
+    window.addEventListener("popstate", hashChecker);
 
     // ===================================================
     init() 
+    hashChecker()
     // ===================================================
 })

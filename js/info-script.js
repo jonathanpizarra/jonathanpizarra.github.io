@@ -45,16 +45,22 @@ $(function(){
     $(".skill-springboot").each((i, e) => {
         console.log(panicState)
         $(e).on("click", ()=>{
-            if(panicState) return
+            // if(panicState) return
             panicState = true
             console.log('entereedd')
             $(".skills-title-backend")[0].innerText = "What have you done!?"
-            interval = setInterval(()=>{
-                const r = Math.floor(Math.random() * (255 - 100 + 1)) + 100;
-                const color = `rgb(${r}, 200, 200)`
-                document.documentElement.style.setProperty("--light", color)
-                $(".skills-title-backend").addClass('skills-title-light')
-            }, 100)
+            const r = Math.floor(Math.random() * (255 - 100 + 1)) + 100;
+            const g = Math.floor(Math.random() * (255 - 100 + 1)) + 100;
+            const b = Math.floor(Math.random() * (255 - 100 + 1)) + 100;
+            const color = `rgb(${r}, ${g}, ${b})`
+            document.documentElement.style.setProperty("--light", color)
+            $(".skills-title-backend").addClass('skills-title-light')
+            // interval = setInterval(()=>{
+            //     const r = Math.floor(Math.random() * (255 - 100 + 1)) + 100;
+            //     const color = `rgb(${r}, 200, 200)`
+            //     document.documentElement.style.setProperty("--light", color)
+            //     $(".skills-title-backend").addClass('skills-title-light')
+            // }, 100)
         })
         
     })

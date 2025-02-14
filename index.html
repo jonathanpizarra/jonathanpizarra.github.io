@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="./css/main-style.css">
     <link rel="stylesheet" href="./css/info-style.css">
     <link rel="stylesheet" href="./css/projects-style.css">
@@ -96,13 +102,56 @@
                 <div class="personal-projects-text">
                     PERSONAL PROJECTS
                 </div>
+
+                <div class="circle projects-circle"></div>
+
+                <div class="project project2">
+
+                    <div class="project-image-container">
+                        <div class="project-images project2-images">
+                            <picture>
+                                <source media="(min-width: 769px)" srcset="./images/rocket/rocket_square.png">
+                            </picture>
+                            <img src="./images/rocket/rocket_wide.png" alt="rocket sample">
+                        </div>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="project-title">.rocket - Data Format Converter</div>
+                        <div class="tech-items">
+                            <div class="tech-item">Vue3</div>
+                            <div class="tech-item">Spring Boot</div>
+                            <div class="tech-item">Redis</div>
+                            <div class="tech-item">PostgreSQL</div>
+                            <div class="tech-item">Render</div>
+                        </div>
+                        <div class="project-description">
+                            A converter of common data formats. Convert your json file to xml or yaml and more...
+                        </div>
+
+                        <a href="https://rocket-42.onrender.com/" target="_blank" class="project-link">
+                            <div class="project-link-text project-link-text1" ><span>Check it out ►</span></div>
+                            <div class="project-link-text project-link-text2" ><span>Check it out ►</span></div>
+                        </a>
+                    </div>
+
+                    <div class="project-overlay project2-overlay">
+                        <p>.rocket</p>
+                    </div>
+
+
+                </div>
+
                 <div class="circle projects-circle"></div>
 
                 <div class="project project1">
 
                     <div class="project-image-container">
                         <div class="project-images project1-images">
-                            <img src="./images/pokedex/pokedex3.png" alt="pokedex sample">
+                            <picture>
+                                <source media="(min-width: 769px)" srcset="./images/pokedex/pokedex_square.png">
+                                <img src="./images/pokedex/pokedex-wide.png" alt="pokedex sample">
+                            </picture>
                         </div>
                     </div>
                     <div class="project-details">
@@ -120,38 +169,9 @@
                         </a>
                     </div>
                     
-                    <div class="project-overlay project1-overlay"></div>
-
-                </div>
-
-                <div class="circle projects-circle"></div>
-
-                <div class="project project2">
-
-                    <div class="project-image-container">
-                        <div class="project-images project2-images">
-                            <img src="./images/evaluator/evaluator7.png" alt="proposition evaluator sample">
-                        </div>
+                    <div class="project-overlay project1-overlay">
+                        <p>Pok<span>é</span>dex</p>
                     </div>
-                    
-                    <div class="project-details">
-                        <div class="project-title">Proposition Evaluator</div>
-                        <div class="tech-items">
-                            <div class="tech-item">C++</div>
-                            <div class="tech-item">CLI</div>
-                        </div>
-                        <div class="project-description">
-                            A command-line application that evaluates propositional logic expressions and displays the truth table and result.
-                        </div>
-
-                        <a href="https://github.com/jonathanpizarra/Proposition-Evaluator" target="_blank" class="project-link">
-                            <div class="project-link-text project-link-text1" ><span>Fork in Github ►</span></div>
-                            <div class="project-link-text project-link-text2" ><span>Fork in Github ►</span></div>
-                        </a>
-                    </div>
-
-                    <div class="project-overlay project2-overlay"></div>
-
 
                 </div>
 
@@ -160,7 +180,10 @@
                 <div class="project project3">
                     <div class="project-image-container">
                         <div class="project-images project3-images">
-                            <img src="./images/minesweeper/minesweeper2.png" alt="minesweeper sample">
+                            <picture>
+                                <source media="(min-width: 769px)" srcset="./images/minesweeper/minesweeper_square2.png">
+                                <img src="./images/minesweeper/minesweeper-wide.png" alt="minesweeper sample">
+                            </picture>
                         </div>
                     </div>
                     <div class="project-details">
@@ -178,7 +201,9 @@
                             <div class="project-link-text project-link-text2" ><span>Check it out ►</span></div>
                         </a>
                     </div>
-                    <div class="project-overlay project3-overlay"></div>
+                    <div class="project-overlay project3-overlay">
+                        <p>MINESWEEPER</p>
+                    </div>
 
 
                 </div>
@@ -188,7 +213,10 @@
                 <div class="project project4">
                     <div class="project-image-container">
                         <div class="project-images project4-images">
-                            <img src="./images/filerepo/filerepo1.png" alt="file repo icon">
+                            <picture>
+                                <source media="(min-width: 769px)" srcset="./images/filerepo/filerepo-square.png">
+                                <img src="./images/filerepo/filerepo-wide.png" alt="file repo icon">
+                            </picture>
                         </div>
                     </div>
                     <div class="project-details">
@@ -202,12 +230,46 @@
                             A collective file repository web app that allows anyone to upload/update files.
                         </div>
 
-                        <a href="" target="_blank" class="project-link">
+                        <a href="https://github.com/jonathanpizarra/filerepo" target="_blank" class="project-link">
                             <div class="project-link-text project-link-text1" ><span>Fork in GitHub ►</span></div>
                             <div class="project-link-text project-link-text2" ><span>Fork in GitHub ►</span></div>
                         </a>
                     </div>
-                    <div class="project-overlay project4-overlay"></div>
+                    <div class="project-overlay project4-overlay">
+                        <p>File Repository</p>
+                    </div>
+
+                </div>
+
+                <div class="circle projects-circle"></div>
+
+                <div class="project project5">
+                    <div class="project-image-container">
+                        <div class="project-images project5-images">
+                            <picture>
+                                <source media="(min-width: 769px)" srcset="./images/pipboy/pip_boy_square.png">
+                                <img src="./images/pipboy/pip_boy_wide.png" alt="pip boy icon">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">Pip Boy UI</div>
+                        <div class="tech-items">
+                            <div class="tech-item">jQuery</div>
+                            <div class="tech-item">UI</div>
+                        </div>
+                        <div class="project-description">
+                            A navigable UI of Pip Boy 3000 Mark IV from Fallout 4.
+                        </div>
+
+                        <a href="https://jonathanpizarra.github.io/Pip-Boy-UI" target="_blank" class="project-link">
+                            <div class="project-link-text project-link-text1" ><span>Check it out ►</span></div>
+                            <div class="project-link-text project-link-text2" ><span>Check it out ►</span></div>
+                        </a>
+                    </div>
+                    <div class="project-overlay project5-overlay">
+                        <p>Pip Boy UI</p>
+                    </div>
 
                 </div>
 
@@ -487,7 +549,9 @@
 
                 <div class="home-web-developer">
                     <div class="circle web-dev-circle"></div>
-                    <div class="web-dev-text">Web and Mobile Developer</div>
+                    <div class="web-dev-text">Dev
+                        
+                    </div>
                 </div>
             </div>
         </div>

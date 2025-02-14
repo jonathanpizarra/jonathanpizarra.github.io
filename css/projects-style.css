@@ -1,6 +1,6 @@
 
 .projects-content{
-    padding: 1rem;
+    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .personal-projects-text{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--dark);
     letter-spacing: 0.2rem;
@@ -27,7 +27,7 @@
 
 .project{
     /* height: 12rem; */
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
     
     width: 100%;
     max-width: 1000px;
@@ -47,11 +47,11 @@
 
 .project-images{
     height: 200px;
-    width: 200px;
-    border: 0.1rem solid var(--light);
+    width: 100%;
+    /* border: 0.1rem solid var(--light); */
     /* border-left-width: 0.5rem; */
     transition: all 0.5s ease-in-out;
-    box-shadow: 1px 1px 1px var(--gray);
+    /* box-shadow: 1px 1px 1px var(--gray); */
     opacity: 0;
     transition: opacity 0.25s ease-in-out 0.1s;
 
@@ -64,7 +64,7 @@
 .project-details{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 /* .project-images:hover{
@@ -100,8 +100,10 @@
 .tech-items{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
     opacity: 0;
+    margin:0 1rem;
     transition: opacity 0.5s ease-in-out 0.65s;
 }
 
@@ -113,20 +115,20 @@
     border: 0.5px solid var(--light);
     background-color: var(--mid);
     letter-spacing: 0.25rem;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.85rem;
     padding: 0.25rem 0.4rem;
-    margin: 0 0.5rem 0 0;
+    margin: 0.5rem ;
     color: var(--light)
 
 }
 
 .project-description{
     /* border: 1px solid var(--gray); */
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem;
     font-size: 1.1rem;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     line-height: 1.5rem;
     color: var(--dark);
     opacity: 0;
@@ -208,6 +210,29 @@
     transition: opacity 0.2s ease-in-out;
 }
 
+.endline{
+    width: 5rem;
+    height: 1px;
+    min-height: 1px;
+    background-color: var(--gray);
+    color: var(--gray);
+    margin: 3rem 0;
+}
+
+@media screen and (min-width: 376px) {
+    .project-description{
+        padding: 1rem 2rem;
+    }
+
+}
+
+@media screen and (min-width: 426px) {
+    .project-description{
+        padding: 1rem 5rem;
+    }
+
+}
+
 @media screen and (min-width: 769px) {
     .project{
         padding: 2rem;
@@ -219,26 +244,24 @@
         border-left: 0.1rem solid var(--light) !important;
     }
 
-    .endline{
-        width: 5rem;
-        height: 1px;
-        min-height: 1px;
-        background-color: var(--gray);
-        color: var(--gray);
-        margin: 3rem 0;
+    .projects-content{
+        padding: 1rem;
     }
 
     .project-details{
         padding:0 2rem;
         flex-grow: 1;
+        align-items: flex-start;
     }
 
     .project-description{
+        padding: 1rem 1rem 1rem 0;
         min-width: 19rem !important;
+        text-align: left;
     }
 
     .project-images{
-        
+        width: 200px;
         box-shadow: 1px 1px 1px var(--gray);
         opacity: 0;
         transition: opacity 0.25s ease-in-out 0.1s,
@@ -252,28 +275,99 @@
     }
 
     .project1-overlay{
-        background-image: url("../images/pokedex/pokedex1.png");
+        background-color: white;
+    }
+
+    .project1-overlay p{
+        position: absolute;
+        right:0;
+        bottom:0;
+        font-family: Montserrat, sans-serif;
+        margin: 1rem;
+        letter-spacing: 0.25rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    .project1-overlay p span{
+        color: rgb(238, 213, 53);
     }
 
     .project2-overlay{
-        background-image: url("../images/evaluator/evaluator1.png");
+        background-color: #3AAFA9;
+    }
+
+    .project2-overlay p{
+        position: absolute;
+        right:0;
+        bottom:0;
+        font-family: 'Atkinson Hyperlegible Mono', sans-serif;
+        margin: 1rem;
+        letter-spacing: 0.5rem;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #FEFFFF;
     }
 
     .project3-overlay{
-        background-image: url("../images/minesweeper/minesweeper4.png");
+        background-color: #686868;
+    } 
+
+    .project3-overlay p{
+        position: absolute;
+        right:0;
+        bottom:0;
+        font-family: 'Play', sans-serif;
+        margin: 1rem;
+        letter-spacing: 0.15rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #FEFFFF;
     }
  
     .project4-overlay{
-        background-image: url("../images/filerepo/filerepo3.png");
+        background-color: white;
+    }
+
+    .project4-overlay p{
+        position: absolute;
+        right:0;
+        bottom:0;
+        font-family:'Courier New', Courier, monospace;
+        margin: 1rem;
+        letter-spacing: 0.1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: black;
+    }
+
+    .project5-overlay{
+        background-color: #272b23;
+    }
+
+    .project5-overlay p{
+        position: absolute;
+        right:0;
+        bottom:0;
+        font-family:Inconsolata, monospace;
+        margin: 1rem;
+        letter-spacing: 0.1rem;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #14fe17;
     }
 
     .project:hover .project-overlay{
         opacity: 0.2;
     }
 
-    .project-image-container:hover ~ .project-details>.project-description{
-        font-weight: 600;
+    .tech-items{
+        justify-content: flex-start;
     }
 
+    /* .project-image-container:hover ~ .project-details>.project-description{
+        font-weight: 600;
+    } */
 
+    
 }
